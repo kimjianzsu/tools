@@ -1,0 +1,357 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Final//EN">
+
+<html>
+
+
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="help.css">
+
+
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+
+<title>Assisting users with disabilities</title>
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+<h1> Accessibility features</h1>
+
+<p>The following topics provide information for users with disabilities:</p>
+
+<p><a href="#Performing_ClearCase_LT_Operations_in_Rational_Developer">Performing ClearCase LT Operations in
+Rational Developer<br>
+
+</a><a href="#Keyboard_Shortcuts">Keyboard Shortcuts<br>
+
+</a><a href="#Setting_ClearCase_preferences_for_accessibility">Setting ClearCase preferences for accessibility<br>
+
+</a><a href="#Additional_Information">Additional Information</a></p>
+
+<h3><a name="Performing_ClearCase_LT_Operations_in_Rational_Developer">Performing
+ClearCase LT Operations in Rational Developer</a></h3>
+
+
+
+<p>Although the ClearCase SCM Adapter provided with Rational
+Developer products is accessible to users with physical disabilities, some of the applications and dialog boxes that
+are started from the integration are not accessible. Equivalent functionality is
+available from the ClearCase command line interface (CLI).<span style="mso-spacerun: yes">
+The table below lists these features along with the commands that provide
+equivalent functions</span></p>
+
+
+
+<p>The
+primary CLI to ClearCase and ClearCase&nbsp;LT is <b style="mso-bidi-font-weight: normal"> <span class="SpellE" style="font-size: 10pt">cleartool</span></b>
+which provides a full set of subcommands that create, modify, and manage the information
+in <span class="SpellE">VOBs</span> and views. For more information about these
+commands and a list of available options, type <b>cleartool man</b> <i>command-name</i>
+or <b>cleartool help</b> <i>command-name</i>.</p>
+
+
+
+<table border="1" width="705" height="686">
+
+  <tr>
+
+    <th width="157" align="left">ClearCase Application</th>
+
+      
+
+    <th width="226" align="left">Description</th>
+
+      
+
+    <th width="300" align="left">Equivalent ClearCase CLI command</th>
+
+  </tr>
+
+  <tr>
+
+    <td width="157" height="146" valign="top">ClearCase Explorer
+
+      
+
+    </td>
+
+    <td width="226" height="146" valign="top">The ClearCase Explorer is used to
+      start common ClearCase applications and wizards, and to navigate and
+      view details for ClearCase views.
+
+      
+
+    </td>
+
+    <td width="300" height="146" valign="top"> See the ClearCase
+      LT documentation for details about all available cleartool commands. For example, the following
+      commands can be used to see the ClearCase details for files and
+      directories in a view:
+
+      
+
+      
+
+      <p>&nbsp; <b>&gt; cd z:\sourceVOB\MyRADProject
+
+      
+
+      </b></p>
+
+      <p><b>&nbsp; &gt; cleartool ls</b>
+
+      
+
+      
+
+      </p>
+
+      
+
+      
+
+      
+
+    </td>
+
+  </tr>
+
+  <tr>
+
+    <td width="157" height="79" valign="top">Join Project Wizard
+
+      
+
+    </td>
+
+    <td width="226" height="79" valign="top">The Join Project wizard allows you to select a project to join, create a development
+      stream, create a development view, and create an integration view.&nbsp; 
+
+      
+
+    </td>
+
+    <td width="300" height="79" valign="top">To create a development stream, use the <b>cleartool</b> <b>mkstream</b>
+
+      command.
+
+      
+
+      
+
+      <p>To create an integration
+      view and development view, use the <b>cleartool</b> <b>mkview</b> command.
+
+      
+
+      </p>
+
+    </td>
+
+  </tr>
+
+  <tr>
+
+    <td width="157" height="106" valign="top">View Creation Wizard
+
+      
+
+    </td>
+
+    <td width="226" height="106" valign="top">The View Creation Wizard helps you
+      create a work area (called a view) for contributing to a development project.
+      The view allows you to access files and directories under
+      Rational ClearCase control. In ClearCase LT, the wizard allows you to
+      create a snapshot view. 
+
+      
+
+      
+
+    </td>
+
+    <td width="300" height="106" valign="top">To create a view, use the <b>cleartool</b> <b>mkview</b>
+
+      command.
+
+      
+
+    </td>
+
+  </tr>
+
+  <tr>
+
+    <td width="157" height="91" valign="top">History Browser
+
+      
+
+    </td>
+
+    <td width="226" height="91" valign="top">The History Browser allows you to
+      examine the event records of Rational ClearCase
+      objects, including elements, hyperlinks, types, storage pools, VOB
+      replicas (MultiSite only), and VOBs.
+
+      
+
+      
+
+    </td>
+
+    <td width="300" height="91" valign="top">To view the history for a ClearCase
+      object, use the <b>cleartool</b> <b>lshistory</b>
+
+      command. 
+
+      
+
+    </td>
+
+  </tr>
+
+  <tr>
+
+    <td width="157" height="59" valign="top">Find Checkouts Wizard
+
+      
+
+    </td>
+
+    <td width="226" height="59" valign="top">The Find Checkouts Wizard allows
+      you to specify the criteria used to locate
+      checked-out elements. 
+
+      
+
+      
+
+    </td>
+
+    <td width="300" height="59" valign="top">To find checkouts from the command
+      line, use the <b>cleartool</b> <b>lsco</b>
+
+      command.
+
+      
+
+      
+
+    </td>
+
+  </tr>
+
+  <tr>
+
+    <td width="157" height="125" valign="top">Deliver dialog 
+
+      
+
+    </td>
+
+    <td width="226" height="125" valign="top">The Deliver preview dialog box displays the information that the deliver
+      operation will use and
+     performs the deliver. You can deliver work either in
+     the form of individual activities or in the form of baselines. You can
+     also control whether differences are merged automatically or manually.
+
+    </td>
+
+ 
+
+    <td width="300" height="125" valign="top">To preview the deliver operation,
+      use the <b>cleartool</b> <b>deliver
+      preview</b> command. 
+
+      
+
+      
+
+      <p>To perform the delivery, use the <b>cleartool</b> <b>deliver</b> command without the preview
+      option&nbsp; 
+
+      
+
+      </p>
+
+    </td>
+
+  </tr>
+
+</table>
+
+<h3><a name="Keyboard_Shortcuts">Keyboard Shortcuts</a></h3>
+
+<p class="MsoNormal">To perform any of the context-sensitive ClearCase LT
+operations in the Rational Developer product, press <b style="mso-bidi-font-weight: normal">Ctrl+Shift+F10</b>
+and press <b style="mso-bidi-font-weight: normal">E</b> to open the <b>Team</b>
+
+menu.
+
+</p>
+
+<p class="MsoNormal">To perform any of the operations on the main <b>ClearCase</b>
+
+menu, press <span class="SpellE"><b style="mso-bidi-font-weight: normal">Alt+C</b></span>.
+
+</p>
+
+<p class="MsoNormal">To perform any of the operations on the ClearCase toolbar,
+use the <b style="mso-bidi-font-weight: normal">Tab</b> key to navigate to the
+ClearCase toolbar and use the arrow keys to navigate to a specific
+ClearCase operation. Press the <b style="mso-bidi-font-weight: normal">Enter</b>
+
+key to start the desired operation.</p>
+
+<h3><a name="Setting_ClearCase_preferences_for_accessibility">Setting ClearCase
+preferences for accessibility</a></h3>
+
+<p class="MsoNormal">The ClearCase integration with Rational Developer products uses
+<a href="IconDeco.htm">icon decorations</a> for ClearCase elements to denote their current status in ClearCase.
+
+For example, a blue underlay denotes that a resource is under ClearCase source
+control and a green check mark indicates that a resource has been checked out.
+
+</p>
+
+<p class="MsoNormal">For users with visual impairments, it is also possible to
+configure the ClearCase integration to display the ClearCase status using text decorations, which can be read by screen readers, instead of icon decorations.
+
+To do this, open the preferences for the Rational Developer products by clicking <b>Window &gt;
+Preferences</b>, then click the <b>Rational ClearCase SCM Adapter</b> section under the <b>Team</b>
+
+preferences. Set the preference for ClearCase decorations to <b style="mso-bidi-font-weight: normal">Enable
+Text Decorations</b>. The keyboard shortcut for this setting in the preferences
+window is <b style="mso-bidi-font-weight: normal">ALT+E</b>.
+
+</p>
+
+<h3><a name="Additional_Information">Additional Information</a></h3>
+
+<p class="MsoNormal">See the online Help in Rational Developer products for more information about
+assistance for users with disabilities, including information about navigating the Rational
+Developer products interfaces, keyboard shortcuts, and accessibility preferences.</p>
+
+<p class="copyright">(C) Copyright IBM Corporation 2000, 2006. All Rights Reserved.</p>
+
+
+
+<p>&nbsp;</p>
+
+
+
+</body>
+
+
+
+</html>
+

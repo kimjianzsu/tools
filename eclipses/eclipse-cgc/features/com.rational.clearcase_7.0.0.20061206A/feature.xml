@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.rational.clearcase"
+      label="%featureName"
+      version="7.0.0.20061206A"
+      provider-name="%providerName"
+      os="win32"
+      ws="win32"
+      arch="x86"
+      image="wsFeature.gif">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %licenseText
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://www3.software.ibm.com/ibmdl/pub/software/rationalsdp/clearcase/60/update"/>
+   </url>
+
+   <includes
+         id="com.ibm.rational.clearcase.ccimport.feature"
+         version="7.0.0.20061020A"/>
+
+   <requires>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.ui.views"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor"/>
+      <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.team.core"/>
+      <import plugin="org.eclipse.team.ui"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.osgi"/>
+   </requires>
+
+   <plugin
+         id="com.rational.clearcase"
+         download-size="0"
+         install-size="0"
+         version="7.0.0.20061206A"/>
+
+   <plugin
+         id="com.rational.clearcase.activities"
+         download-size="0"
+         install-size="0"
+         version="7.0.0.20061206A"/>
+
+   <plugin
+         id="com.rational.clearcase.help"
+         download-size="0"
+         install-size="0"
+         version="7.0.0.20061206A"/>
+
+</feature>

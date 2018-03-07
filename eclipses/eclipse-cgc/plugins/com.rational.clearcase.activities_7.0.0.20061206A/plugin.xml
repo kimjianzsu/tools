@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!-- ===================================================== -->
+<!-- Declare the activities for ClearCase SCM Adapter      -->
+<!-- ===================================================== -->
+
+<plugin
+   name = "com.rational.clearcase.activities"
+   id = "com.rational.clearcase.activities"
+   version="7.0.0.20061206A"
+   provider-name = "%RSC">
+   
+   <extension
+         point="org.eclipse.ui.activities">
+      <activity
+            name="%RCSCM"
+            description="%RCSCM.Desc"
+            id="com.rational.clearcase">
+      </activity>           
+      <activity
+            name="%activity.team"
+            description="%activity.team.desc"
+            id="org.eclipse.team">
+      </activity> 
+      <activityPatternBinding
+            activityId="com.rational.clearcase"
+            pattern="com\.rational\.clearcase/.*">
+      </activityPatternBinding>
+      <category
+            name="%activity.cat.team"
+            description="%activity.cat.team.desc"
+            id="org.eclipse.categories.teamCategory">
+      </category>
+      <categoryActivityBinding
+            activityId="com.rational.clearcase"
+            categoryId="org.eclipse.categories.teamCategory">
+      </categoryActivityBinding>
+      <activityRequirementBinding
+            activityId="com.rational.clearcase"
+            requiredActivityId="org.eclipse.team">
+      </activityRequirementBinding>
+            <defaultEnablement
+            id="com.rational.clearcase">
+      </defaultEnablement>
+      <defaultEnablement
+            id="org.eclipse.team">
+      </defaultEnablement>
+   </extension>
+</plugin>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<!-- ========================== -->
+<!-- Define topics for the Concepts -->
+<!-- ========================== -->
+<toc label="Concepts">
+  <topic label="Using the Rational ClearCase SCM Adapter" href="doc/CCMain.htm" /> 
+  <topic label="Creating a standardized development environment" href="doc/StandEnv.htm" /> 
+  <topic label="Working with metadata" href="doc/Metadata.htm" /> 
+  <topic label="Managing workspaces" href="doc/ManWksp.htm" /> 
+  <topic label="Working with dynamic views" href="doc/DynamicV.htm" /> 
+  <topic label="Delivering from a development stream" href="doc/DelivDev.htm" /> 
+  <topic label="Rebasing in an integrated environment" href="doc/RebIntEv.htm" /> 
+  <topic label="Refactoring elements under source control" href="doc/Refactor.htm" /> 
+  <topic label="ClearCase decorations" href="doc/IconDeco.htm" /> 
+  <topic label="Automatic check out during a Save operation" href="doc/AutoChkO.htm" /> 
+</toc>

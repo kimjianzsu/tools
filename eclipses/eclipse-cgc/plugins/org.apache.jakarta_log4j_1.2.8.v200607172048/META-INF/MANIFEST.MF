@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-Name: %PLUGIN_NAME
+Bundle-ClassPath: lib/log4j-1.2.8.jar
+Bundle-Vendor: %PLUGIN_PROVIDER
+Bundle-ManifestVersion: 2
+Bundle-Localization: plugin
+Bundle-SymbolicName: org.apache.jakarta_log4j
+Eclipse-BuddyPolicy: registered
+Export-Package: org.apache.log4j,org.apache.log4j.chainsaw,org.apache.
+ log4j.config,org.apache.log4j.helpers,org.apache.log4j.jdbc,org.apach
+ e.log4j.jmx,org.apache.log4j.lf5,org.apache.log4j.lf5.util,org.apache
+ .log4j.lf5.viewer,org.apache.log4j.lf5.viewer.categoryexplorer,org.ap
+ ache.log4j.lf5.viewer.configure,org.apache.log4j.net,org.apache.log4j
+ .nt,org.apache.log4j.or,org.apache.log4j.or.jms,org.apache.log4j.or.s
+ ax,org.apache.log4j.spi,org.apache.log4j.varia,org.apache.log4j.xml
+Bundle-Version: 1.2.8.v200607172048
+

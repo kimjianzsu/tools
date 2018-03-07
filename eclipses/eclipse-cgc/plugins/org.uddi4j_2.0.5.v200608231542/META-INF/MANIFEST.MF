@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-Name: %PLUGIN_NAME
+Bundle-ClassPath: lib/uddi4j.jar
+Bundle-Vendor: %PLUGIN_PROVIDER
+Bundle-ManifestVersion: 2
+Bundle-Localization: plugin
+Bundle-SymbolicName: org.uddi4j
+Eclipse-BuddyPolicy: registered
+Require-Bundle: org.apache.axis;bundle-version="[1.3.0,1.4.0)"
+Export-Package: org.uddi4j,org.uddi4j.client,org.uddi4j.datatype,org.u
+ ddi4j.datatype.assertion,org.uddi4j.datatype.binding,org.uddi4j.datat
+ ype.business,org.uddi4j.datatype.service,org.uddi4j.datatype.tmodel,o
+ rg.uddi4j.request,org.uddi4j.response,org.uddi4j.transport,org.uddi4j
+ .util
+Bundle-Version: 2.0.5.v200608231542
+

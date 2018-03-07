@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: dk.kamstruplinnet.implementors.core; singleton:=true
+Bundle-Version: 0.0.16
+Bundle-ClassPath: implementors-core.jar
+Bundle-Activator: dk.kamstruplinnet.implementors.core.Implementors
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Export-Package: dk.kamstruplinnet.implementors.core
+Require-Bundle: org.eclipse.core.resources;bundle-version="3.1.0",
+ org.eclipse.jdt.core,
+ org.eclipse.jdt.ui,
+ org.eclipse.core.runtime
+Eclipse-LazyStart: true

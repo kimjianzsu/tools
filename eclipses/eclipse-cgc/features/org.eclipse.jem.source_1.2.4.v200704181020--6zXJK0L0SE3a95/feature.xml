@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature primary="false"  provider-name="%providerName"    label="%featureName"  image="eclipse_update_120.jpg" id="org.eclipse.jem.source"  version="1.2.4.v200704181020--6zXJK0L0SE3a95">
+	<description >
+		%description
+	</description>
+	<copyright >
+		%copyright
+	</copyright>
+	<license url="%licenseURL">
+		%license
+	</license>
+	<url>
+		<update label="%updateSiteName" url="http://update.eclipse.org/tools/ve/updates/1.0/"/>
+		<discovery label="%updateSiteName" url="http://update.eclipse.org/tools/ve/updates/1.0/"/>
+	</url>
+	<plugin    fragment="false"  download-size="0" install-size="0" id="org.eclipse.jem.source" version="1.2.4.v200704181020--6zXJK0L0SE3a95"/>
+</feature>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="CONTENT-TYPE" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+<title>eclipse-cs: Setting up a project</title>
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" class="maintable">
+<tr>
+<td class="mainsection">
+<table style="height: 100%" cellspacing="0" cellpadding="0" width="100%" border="0">
+<tr>
+<td>
+<table cellpadding="0" cellspacing="0" class="header">
+<tr>
+<td style="text-align: left; width=100%">
+<img alt="eclipse-cs Banner" src="images/banner.gif" />
+</td>
+<td style="vertical-align: middle; width: 75px; height: 75px;">
+<a class="imagelink" href="http://sourceforge.net/">
+<img alt="SourceForge.net Logo" src="http://sourceforge.net/sflogo.php?group_id=80344&amp;amp;type=1" />
+</a>
+<a class="imagelink" href="http://sourceforge.net/donate/index.php?group_id=80344">
+<img alt="Support This Project" src="http://images.sourceforge.net/images/project-support.jpg" />
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="content">
+        <h2>-- Setting up a project --</h2>
+        <p>To get your files checked by Checkstyle there are a few simple steps set up the
+            Checkstyle plug-in for your project.</p>
+        <ol>
+            <li>
+                <p>
+                    <b>Open the properties of the project you want to get checked</b>
+                </p>
+                <p>
+                    <img src="images/open_properties.png" alt="Open Project Properties" />
+                </p>
+            </li>
+            <li>
+                <p>
+                    <b>Select the Checkstyle section within the properties dialog</b>
+                </p>
+                <p>
+                    <img src="images/properties_simple.png" alt="Select Checkstyle Properties" />
+                </p>
+            </li>
+            <li>
+                <p>
+                    <b>Activate Checkstyle for your project by selecting the</b>
+                    <i>Checkstyle active for this project</i>
+                    <b>check box and press</b>
+                    <i>OK</i>
+                </p>
+                <p>
+                    <img src="images/properties_simple_checked.png" alt="Checkstyle Properties page" />
+                </p>
+                <p>Don't mind the other options of the Checkstyle project configuration for
+                    now - these will be explained in detail later. <br /> For starters we are using
+                    the <i>Sun Checks</i> configuration which is built into the plug-in. This
+                    configuration contains coding conventions recommended by Sun and widely accepted
+                    standards and best practices. <br />
+                    <br /> Now Checkstyle should begin checking your code. This may take a while
+                    depending on how many source files your project contains. <br /> The Checkstyle
+                    Plug-in uses background jobs to do its work - so while Checkstyle audits your
+                    source files you should be able to continue your work.</p>
+                <p>After Checkstyle has finished checking your code please look into your Eclipse
+                    Problems View. <br /> The should be some warnings from Checkstyle. This warnings
+                    point to the code locations where your code violates the Sun Checks
+                    configuration.</p>
+                <p>
+                    <img src="images/annotations.png" alt="Checkstyle markers in Problems View and                         source annotations" />
+                </p>
+                <p>You can navigate to the problems in your code by double-clicking the problem in
+                    you problems view. <br /> On the left hand side of the editor an icon is shown
+                    for each line that contains a Checkstyle violation. Hovering with your mouse
+                    above this icon will show you the problem message. <br /> Also note the editor
+                    annotations - they are there to make it even easier to see where the problems
+                    are. <br />
+                </p>
+            </li>
+        </ol>
+        <h3>Congratulations!</h3>
+        <p>You audited your first eclipse project with Checkstyle. <br /> Now you surely want to know
+            how to change the rules for the audit to accommodate your own (or your companies) coding
+            style. <br /> Read on in the <a href="basic_creating_config.html" shape="rect">next chapter</a> .
+            <br />
+        </p>
+    </td>
+</tr>
+<tr>
+<td class="footer">
+<table style="text-align:top;" width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td style="width: 35px">
+<a href="#">
+<img alt="Back to top" src="images/top_button_left.gif" />
+</a>
+</td>
+<td class="copyright"> Copyright © 2002-2007 David Schneider, <a href="http://www.koedderitzsch.net">Lars Ködderitzsch</a>. All Rights
+					Reserved. </td>
+<td style="width: 35px">
+<a href="#">
+<img alt="Back to top" src="images/top_button_right.gif" />
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

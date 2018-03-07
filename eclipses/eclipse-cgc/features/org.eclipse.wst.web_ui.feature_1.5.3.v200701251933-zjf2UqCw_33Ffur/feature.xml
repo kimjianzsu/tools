@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.wst.web_ui.feature"
+      label="%featureName"
+      version="1.5.3.v200701251933-zjf2UqCw_33Ffur"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://download.eclipse.org/webtools/updates/"/>
+   </url>
+
+   <includes
+         id="org.eclipse.wst.web_userdoc.feature"
+         version="1.5.3.v200701251933--1G955G5L9_7IAE"/>
+
+   <includes
+         id="org.eclipse.wst.web_core.feature"
+         version="1.5.3.v200701251933--4hNDDhFfKVFaSL"/>
+
+   <requires>
+      <import feature="org.eclipse.wst.xml_ui.feature" version="1.5.1"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.wst.html.ui.infopop"
+         download-size="0"
+         install-size="0"
+         version="1.0.1.v200605040131"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.javascript.ui.infopop"
+         download-size="0"
+         install-size="0"
+         version="1.0.1.v200605040131"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.web.ui.infopop"
+         download-size="0"
+         install-size="0"
+         version="1.0.201.v200605070230"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.css.ui"
+         download-size="0"
+         install-size="0"
+         version="1.0.101.v200609140550"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.html.ui"
+         download-size="0"
+         install-size="0"
+         version="1.0.102.v200702021750"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.javascript.ui"
+         download-size="0"
+         install-size="0"
+         version="1.0.2.v200701250230"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.web.ui"
+         download-size="0"
+         install-size="0"
+         version="1.1.1.v200609132124"
+         unpack="false"/>
+
+</feature>

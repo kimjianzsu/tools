@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.jst.web_core.feature"
+      label="%featureName"
+      version="1.5.4.v200704150236--87cMNBMzUxToUV"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://download.eclipse.org/webtools/updates/"/>
+   </url>
+
+   <requires>
+      <import feature="org.eclipse.platform" version="3.2" match="equivalent"/>
+      <import feature="org.eclipse.emf" version="2.2" match="equivalent"/>
+      <import feature="org.eclipse.jdt" version="3.2" match="equivalent"/>
+      <import feature="org.eclipse.jem" version="1.2" match="equivalent"/>
+      <import feature="org.eclipse.jst.common_core.feature" version="1.0.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.jst.server_core.feature" version="1.0.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.wst.web_core.feature" version="1.0.0" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.jst.common.annotations.core"
+         download-size="0"
+         install-size="0"
+         version="1.1.1.v200609132124"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jst.common.annotations.controller"
+         download-size="0"
+         install-size="0"
+         version="1.1.1.v200609132124"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jst.common.frameworks"
+         download-size="0"
+         install-size="0"
+         version="1.1.4.v200702021430"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jst.j2ee.web"
+         download-size="0"
+         install-size="0"
+         version="1.1.3.v200701242244"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jst.jsp.core"
+         download-size="0"
+         install-size="0"
+         version="1.1.104.v200704191900"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jst.j2ee.core"
+         download-size="0"
+         install-size="0"
+         version="1.1.53.v200704191600"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jst.j2ee"
+         download-size="0"
+         install-size="0"
+         version="1.1.4.v200704261800"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.servlet.api"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.v20060601"
+         unpack="false"/>
+
+</feature>

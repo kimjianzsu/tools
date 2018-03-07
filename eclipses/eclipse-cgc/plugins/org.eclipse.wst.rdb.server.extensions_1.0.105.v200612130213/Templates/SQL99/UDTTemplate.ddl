@@ -1,0 +1,1 @@
+CREATE TYPE <schema>.type1 AS INTEGER;

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.apache.xerces.feature"
+      label="%featureName"
+      version="2.8.0.v200605151647--08422828353873"
+      provider-name="%providerName">
+
+   <description url="http://xerces.apache.org/xerces2-j/">
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="http://www.apache.org/licenses/">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://download.eclipse.org/webtools/updates/"/>
+   </url>
+
+   <plugin
+         id="org.apache.xerces"
+         download-size="0"
+         install-size="0"
+         version="2.8.0.v200606131651"/>
+
+</feature>

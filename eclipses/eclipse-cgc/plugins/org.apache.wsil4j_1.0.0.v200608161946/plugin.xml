@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+	<extension
+         point="org.eclipse.wst.internet.cache.cacheresource">
+      <cacheresource
+            license="wsil-license.html"
+            url="http://schemas.xmlsoap.org/ws/2001/10/inspection/"/>
+      <cacheresource
+            license="wsil-license.html"
+            url="http://schemas.xmlsoap.org/ws/2001/10/inspection/wsdl/"/>
+      <cacheresource
+            license="wsil-license.html"
+            url="http://schemas.xmlsoap.org/ws/2001/10/inspection/uddi/"/>
+    </extension>
+</plugin>

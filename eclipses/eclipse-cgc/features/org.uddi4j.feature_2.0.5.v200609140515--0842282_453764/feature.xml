@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.uddi4j.feature"
+      label="%featureName"
+      version="2.0.5.v200609140515--0842282_453764"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="LICENSE.html">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://download.eclipse.org/webtools/updates/"/>
+   </url>
+
+   <requires>
+      <import feature="org.apache.axis.feature" version="1.3.0"/>
+   </requires>
+
+   <plugin
+         id="org.uddi4j"
+         download-size="0"
+         install-size="0"
+         version="2.0.5.v200608231542"/>
+
+</feature>

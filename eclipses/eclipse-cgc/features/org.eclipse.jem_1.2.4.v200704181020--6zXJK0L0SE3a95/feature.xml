@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.jem"
+      label="%featureName"
+      version="1.2.4.v200704181020--6zXJK0L0SE3a95"
+      provider-name="%providerName"
+      image="eclipse_update_120.jpg">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://update.eclipse.org/tools/ve/updates/1.0/"/>
+      <discovery label="%updateSiteName" url="http://update.eclipse.org/tools/ve/updates/1.0/"/>
+   </url>
+
+   <requires>
+      <import feature="org.eclipse.jdt" version="3.1.0" match="compatible"/>
+      <import feature="org.eclipse.emf" version="2.2.0" match="compatible"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.jem.beaninfo"
+         download-size="0"
+         install-size="0"
+         version="1.2.2.v20061027_M"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jem.proxy"
+         download-size="0"
+         install-size="0"
+         version="1.2.0.v20060918_M"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jem"
+         download-size="0"
+         install-size="0"
+         version="1.2.1.v20060918_M"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jem.workbench"
+         download-size="0"
+         install-size="0"
+         version="1.2.4.v200704181020"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.etools.emf.event"
+         download-size="0"
+         install-size="0"
+         version="3.0.0.v20060918_M"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jem.ui"
+         download-size="0"
+         install-size="0"
+         version="1.2.1.v20060918_M"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jem.util"
+         download-size="0"
+         install-size="0"
+         version="1.2.1.v200704181020"
+         unpack="false"/>
+
+</feature>

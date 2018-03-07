@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Transitional//EN">
+
+<html>
+
+
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="help.css">
+
+
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+
+<title>Known problems and limitations</title>
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+<h1>Known problems and limitations</h1>
+
+
+
+<p>The following list describes known problems and limitations associated with
+the ClearCase SCM Adapter.</p>
+
+<h3>Dynamic views and automatic checkout</h3>
+
+<p>Within Rational Developer products, a few non-interactive editors may not check out
+files when first modified. If one of these editors edits a checked-in file that
+is under ClearCase control in the Rational Developer product, these editors automatically
+check out the file when they save it. If you
+are using a shared branch in a dynamic view, the automatic check out process
+could create a potential problem. If you begin to edit a file that is not
+checked out, another user might check the file out, edit it, and check in a new
+version in the meantime. In this case, your changes overwrite the
+other user's changes when you save the file. If you are using a
+shared branch within a dynamic view, you must check out files before editing
+them.&nbsp;&nbsp;</p>
+
+<h3>Using ClearCase tools to modify source files</h3>
+
+<p>Java<sup>TM</sup> .class files can get out of synch because the incremental
+compiler does not run when the user changes a file from any tool outside the
+Rational Developer product (such as Notepad or ClearCase Diff Merge tools). If you modify a
+file outside the Rational Developer workbench, right-click the element and click
+<b>Refresh</b>.</p>
+
+<h3>&quot;File has been removed from the file system&quot; error</h3>
+
+<p>Under some circumstances, when you attempt to add a view
+private file to source control, the Rational Developer product displays this error message: &quot;File has been removed from the file system.&quot; This
+problem occurs only when the file is open in an editor. The file has not been deleted and this error message can be
+ignored.</p>
+
+<h3>Refactoring</h3>
+
+<p>When you perform a refactor operation in Eclipse or a Rational Developer
+product, the ClearCase SCM Adapter may prompt
+you with a list of files to check out. If you clear the check box associated
+with any of the files in the Check Out Element(s) dialog box, the refactor
+operation fails. The workaround is to allow the ClearCase SCM Adapter to check
+out all the files, then undo the checkout for the files that you do not want to
+check out.</p>
+
+<h3>Files show as view-private after reconnecting to ClearCase</h3>
+
+<p>When you disconnect from ClearCase, disable and then enable your network
+connection, and then reconnect to ClearCase, your project files may appear in
+the workspace as view-private. ClearCase menu options for the project may also
+be inactive. The workaround is to wait until ClearCase services restart before
+attempting to reconnect to ClearCase.</p>
+
+<h3>Adding ClearCase to your perspective</h3>
+
+<p>ClearCase menus may not appear in some perspectives in Rational Developer
+products. The workaround is to manually add ClearCase to the perspective by
+clicking <b>Windows &gt; Customize Perspective</b>, selecting the <b>Comments</b>
+tab, and checking the <b>ClearCase</b> option in the Available Command Group
+list box</p>
+
+<h3>Failing to preserve case in mixed environments can produce compile errors</h3>
+
+<p>When working in a mixed environment, take the following steps to avoid
+compile errors caused by case-inconsistent file names:</p>
+
+<ol>
+  <li>In the Windows Control Panel, click <b>ClearCase</b>.</li>
+  <li>In the ClearCase Properties dialog, click the <b>MVFS</b> tab.</li>
+  <li>Make sure the <b>Case Insensitive MVFS</b> and the <b>Case Preserving</b>
+    options are selected.</li>
+</ol>
+
+<p>If these options are not selected, you may experience compile errors because
+the case of the file names is different.</p>
+
+<h3>Refactoring and Renaming a Java package using Eclipse 3.2.0 fails</h3>
+
+<p>If you perform a <b>Refactor -&gt; Rename</b> operation on a Java package
+under ClearCase control using Eclipse 3.2.0, the operation fails because you not
+prompted to check out the Java files contained in the package. The workaround is
+to check out all the Java files in the package that will be affected by the
+operation before performing the <b>Refactor -&gt; Rename</b> operation.</p>
+
+<h3><img border="0" src="nglinux.gif" alt="Linux only indicator" width="49" height="13">&nbsp; Undo Hijack does not work after
+saving changes</h3>
+
+<p>An <b>Undo Hijack</b> operation performed on a file after you hijack, edit, and
+save it does not work. The workaround is to check out the file and cancel the
+checkout operation using <a href="UndoCOut.htm">Undo Check Out</a>.</p>
+
+<h3><img border="0" src="nglinux.gif" alt="Linux only indicator" width="49" height="13">&nbsp; xclearcase crashes on Red Hat
+Linux 8.x</h3>
+
+<p>If you are running on any of the following platforms:&nbsp;</p>
+
+<p>RedHat Professional 8 and 9, RHEL 2.1 and 3.0, or SLES9</p>
+
+<p> ClearCase does not support a LANG environment
+variable that contains <b>UTF-8</b>. If you use
+ClearCase GUIs on these platforms, you must set the value of LANG in the <b>/etc/sysconfig/i18n</b>
+
+file to a supported value, such as <b>C</b> or <b>en_US.iso885915</b>. After you
+reset the LANG environment variable, verify that the SUPPORTED variable in the <b>i18n</b> file also
+contains this value. If it does not, add this value to the SUPPORTED variable.</p>
+
+<h3><img border="0" src="nglinux.gif" alt="Linux only indicator" width="49" height="13">&nbsp; Unable to install ClearCase or
+apply patches under Red Hat Linux 8.x</h3>
+
+<p>When you attempt to install ClearCase or to apply ClearCase patches, you see
+this error message: &quot;Current directory incorrect.&quot;&nbsp; The
+problem is actually with Perl and is not due to an incorrect directory. The
+workaround is to install the Red Hat Linux 8.x package compat-db-3.3.11, which
+provides libdb.so.3.</p>
+
+<h3><img border="0" src="nglinux.gif" alt="Linux only indicator" width="49" height="13">&nbsp; Cannot move resource to a
+non-versioned folder</h3>
+
+<p>If you try to move a resource that is under source control to a
+folder that is not under source control, the move fails and an error
+message states that ClearCase failed to add the parent directory to
+source control. The workaround is to place the destination folder under source control.</p>
+
+<p class="copyright">(C) Copyright IBM Corporation 2000, 2006. All Rights Reserved.</p>
+
+
+
+</body>
+
+
+
+</html>
+

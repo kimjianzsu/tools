@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin
+   id="org.springframework.ide.eclipse.ui"
+   name="%pluginName"
+   version="1.3.3"
+   provider-name="%providerName"
+   class="org.springframework.ide.eclipse.ui.SpringUIPlugin">
+
+   <runtime>
+      <library name="ui.jar">
+         <export name="*"/>
+      </library>
+   </runtime>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.ui.views"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor"/>
+      <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.eclipse.jdt.core"/>
+      <import plugin="org.eclipse.jdt.ui"/>
+      <import plugin="org.springframework.ide.eclipse.core"/>
+   </requires>
+
+   <extension
+         point="org.eclipse.ui.ide.projectNatureImages">
+      <image
+            natureId="org.springframework.ide.eclipse.core.springnature"
+            icon="icons/full/ovr16/spring_ovr.gif"
+            id="org.springframework.ide.eclipse.ui.springnatureimage"/>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IProject"
+            adaptable="true"
+            id="org.springframework.ide.eclipse.ui.actions.nonSpringProject">
+         <visibility>
+            <and>
+               <and>
+                  <not>
+                     <objectState
+                           name="nature"
+                           value="org.springframework.ide.eclipse.core.springnature">
+                     </objectState>
+                  </not>
+                  <not>
+                     <objectState
+                           name="nature"
+                           value="org.springframework.ide.eclipse.beans.core.beansnature">
+                     </objectState>
+                  </not>
+               </and>
+               <not>
+                  <objectState
+                        name="nature"
+                        value="org.springframework.eclipse.core.springnature">
+                  </objectState>
+               </not>
+            </and>
+         </visibility>
+         <action
+               label="%popupMenus.addNature.label"
+               class="org.springframework.ide.eclipse.ui.internal.actions.AddRemoveNature"
+               enablesFor="+"
+               id="org.springframework.ide.eclipse.ui.actions.addNature">
+         </action>
+      </objectContribution>
+
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IProject"
+            adaptable="true"
+            id="org.springframework.ide.eclipse.beans.ui.actions.springProject">
+         <visibility>
+            <objectState
+                  name="nature"
+                  value="org.springframework.ide.eclipse.core.springnature">
+            </objectState>
+         </visibility>
+<!--
+         <filter
+               name="nature"
+               value="org.springframework.ide.eclipse.core.springnature">
+         </filter>
+-->         <action
+               label="%popupMenus.removeNature.label"
+               class="org.springframework.ide.eclipse.ui.internal.actions.AddRemoveNature"
+               enablesFor="+"
+               id="org.springframework.ide.eclipse.ui.actions.removeNature">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

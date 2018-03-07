@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="CONTENT-TYPE" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+<title>eclipse-cs: Providing a build-in configuration</title>
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" class="maintable">
+<tr>
+<td class="mainsection">
+<table style="height: 100%" cellspacing="0" cellpadding="0" width="100%" border="0">
+<tr>
+<td>
+<table cellpadding="0" cellspacing="0" class="header">
+<tr>
+<td style="text-align: left; width=100%">
+<img alt="eclipse-cs Banner" src="images/banner.gif" />
+</td>
+<td style="vertical-align: middle; width: 75px; height: 75px;">
+<a class="imagelink" href="http://sourceforge.net/">
+<img alt="SourceForge.net Logo" src="http://sourceforge.net/sflogo.php?group_id=80344&amp;amp;type=1" />
+</a>
+<a class="imagelink" href="http://sourceforge.net/donate/index.php?group_id=80344">
+<img alt="Support This Project" src="http://images.sourceforge.net/images/project-support.jpg" />
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="content">
+        <h2>-- Providing a build-in configuration --</h2>
+        <p>By providing a <a href="extending_fragments.html" shape="rect">fragment</a> the plug-in enables you to
+            roll out an immutable Checkstyle configuration to your team members.<br /> This is
+            especially powerful if you distribute your fragment via a corporate update site</p>
+        <p>You can provide such a built-in configuration by the use of the <span class="code-blue">com.atlassw.tools.eclipse.checkstyle.configurations</span> extension point.</p>
+        <p>Simply package you configuration file with your fragment and add a similar entry (see
+            example below) to your <span class="code-blue">fragment.xml</span>. <br />
+            <br />
+        </p>
+        <p>
+            <b>Example:</b>
+        </p>
+        <p>
+            <span class="code-blue">&lt;extension</span>
+            <br />
+            <span class="code-blue">    id=</span>
+            <span class="code-green">"com.mychecks"</span>
+            <br />
+            <span class="code-blue">    point=</span>
+            <span class="code-green">"com.atlassw.tools.eclipse.checkstyle.configurations"</span>
+            <span class="code-blue">&gt;</span>
+            <br />
+            <span class="code-blue">    &lt;check-configuration</span>
+            <br />
+            <span class="code-blue">        name=</span>
+            <span class="code-green">"My built-in configuration"</span>
+            <br />
+            <span class="code-blue">        description=</span>
+            <span class="code-green">"The mandatory set of checkstyle rules for my
+                company."</span>
+            <br />
+            <span class="code-blue">        location=</span>
+            <span class="code-green">"my-custom-builtin-configuration.xml"</span>
+            <span class="code-blue">&gt;</span>
+            <br />
+            <span class="code-blue">    &lt;/check-configuration&gt;</span>
+            <br />
+            <span class="code-blue">&lt;/extension&gt;</span>
+            <br />
+        </p>
+    </td>
+</tr>
+<tr>
+<td class="footer">
+<table style="text-align:top;" width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td style="width: 35px">
+<a href="#">
+<img alt="Back to top" src="images/top_button_left.gif" />
+</a>
+</td>
+<td class="copyright"> Copyright © 2002-2007 David Schneider, <a href="http://www.koedderitzsch.net">Lars Ködderitzsch</a>. All Rights
+					Reserved. </td>
+<td style="width: 35px">
+<a href="#">
+<img alt="Back to top" src="images/top_button_right.gif" />
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

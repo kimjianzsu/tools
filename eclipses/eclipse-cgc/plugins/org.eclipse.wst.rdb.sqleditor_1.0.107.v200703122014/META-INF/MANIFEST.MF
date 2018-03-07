@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Bundle-Name: %pluginName
+Bundle-ClassPath: sqleditor.jar
+Bundle-Activator: org.eclipse.wst.rdb.sqleditor.internal.SQLEditorPlug
+ in
+Bundle-Vendor: %providerName
+Bundle-ManifestVersion: 2
+Bundle-Localization: plugin
+Bundle-SymbolicName: org.eclipse.wst.rdb.sqleditor; singleton:=true
+Require-Bundle: org.eclipse.core.resources;bundle-version="[3.2.0,4.0)
+ ",org.eclipse.core.runtime;bundle-version="[3.2.0,4.0)",org.eclipse.j
+ face.text;visibility:=reexport;bundle-version="[3.2.0,4.0)",org.eclip
+ se.ui;bundle-version="[3.2.0,4.0)",org.eclipse.ui.editors;visibility:
+ =reexport;bundle-version="[3.2.0,4.0)",org.eclipse.ui.ide;bundle-vers
+ ion="[3.2.0,4.0)",org.eclipse.ui.views;visibility:=reexport;bundle-ve
+ rsion="[3.2.0,4.0)",org.eclipse.ui.workbench.texteditor;visibility:=r
+ eexport;bundle-version="[3.2.0,4.0)",org.eclipse.wst.rdb.connection.u
+ i;bundle-version="[1.0.101,1.1.0)",org.eclipse.wst.rdb.core;bundle-ve
+ rsion="[1.0.106,1.2.0)",org.eclipse.wst.rdb.core.ui;bundle-version="[
+ 1.0.102,1.1.0)",org.eclipse.wst.rdb.models.sql;bundle-version="[1.0.1
+ 02,1.1.0)",org.eclipse.wst.rdb.server.ui;bundle-version="[1.0.101,1.1
+ .0)",com.ibm.icu;bundle-version="[3.4.4,3.7.0)"
+Export-Package: org.eclipse.wst.rdb.sqleditor.internal;x-internal:=tru
+ e,org.eclipse.wst.rdb.sqleditor.internal.actions;x-internal:=true,org
+ .eclipse.wst.rdb.sqleditor.internal.editor;x-internal:=true,org.eclip
+ se.wst.rdb.sqleditor.internal.icons;x-internal:=true,org.eclipse.wst.
+ rdb.sqleditor.internal.sql;x-internal:=true,org.eclipse.wst.rdb.sqled
+ itor.internal.utils;x-internal:=true
+Bundle-Version: 1.0.107.v200703122014
+Eclipse-LazyStart: true
+

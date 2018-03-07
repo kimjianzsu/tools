@@ -1,0 +1,5 @@
+CREATE TRIGGER <schema>.trig1
+  AFTER DELETE ON <schema>.<table>
+  REFERENCING OLD AS OLD
+  FOR EACH ROW MODE DB2SQL
+  DELETE FROM <schema>.table2 WHERE col1 = '';

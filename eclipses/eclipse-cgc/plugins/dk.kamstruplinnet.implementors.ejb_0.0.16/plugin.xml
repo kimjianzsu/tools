@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+     <extension
+         point="dk.kamstruplinnet.implementors.core.implementorproviders">
+      <provider
+            class="dk.kamstruplinnet.implementors.ejb.EJBImplementorFinder">
+      </provider>
+   </extension>
+   <extension
+         point="org.eclipse.ui.propertyPages">
+      <page
+            objectClass="org.eclipse.core.resources.IProject"
+            adaptable="true"
+            name="%propertyPageName"
+            class="dk.kamstruplinnet.implementors.ejb.EJBImplementorsPropertyPage"
+            id="dk.kamstruplinnet.implementors.ejb.EJBImplementorsPropertyPage">
+      </page>
+   </extension>
+
+</plugin>

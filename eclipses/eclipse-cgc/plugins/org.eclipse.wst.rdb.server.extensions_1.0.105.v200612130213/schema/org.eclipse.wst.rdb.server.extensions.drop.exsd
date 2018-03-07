@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.eclipse.wst.rdb.server.extensions.org.eclipse.wst.rdb.server.extensions">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="org.eclipse.wst.rdb.server.extensions.org.eclipse.wst.rdb.server.extensions" id="drop" name="DropSQLObjects"/>
+      </appInfo>
+      <documentation>
+         This extension point can be used to provide an own implementation to drop sql data objects from the database. By default all sql data objects in the database explorer are dropped from the database by executing a DROP ddl statement. If running the DROP ddl statement is not sufficient to remove a specific sql data object from the database, implementors of this extension point can contribute a class which is used to perform the drop operation instead of running the DROP ddl statement.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <complexType>
+         <sequence>
+            <element ref="DropProvider" minOccurs="0" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="DropProvider">
+      <annotation>
+         <documentation>
+            This element specifies a provider for a specific object class which implements the drop functionality to remove objects of this class type from the database.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="class" type="string" use="required">
+            <annotation>
+               <documentation>
+                  A class that implements IDropSQLObject.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="objectClassname" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Name of the class which represents the sql data object in the tree of the database explorer and for which the drop functionality is provided. The class name must be specified including the package name.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         05/01/2005
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="apiInfo"/>
+      </appInfo>
+      <documentation>
+         
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="implementation"/>
+      </appInfo>
+      <documentation>
+         
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="copyright"/>
+      </appInfo>
+      <documentation>
+         Copyright (c) 2001, 2005 IBM Corporation and others.
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+      </documentation>
+   </annotation>
+
+</schema>

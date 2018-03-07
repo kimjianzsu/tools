@@ -1,0 +1,5 @@
+Running Tomcat 6 Under Eclipse
+Find the file org.eclipse.jst.server.tomcat.core_1.0.103.v20060904b.jar which lives in the plugins directory under the Eclipse install directory. Copy the file somewhere else and unzip it. Modify the file verifyInstall.properties so that the verify55install line looks like this: 
+
+verify55install=bin/bootstrap.jar,conf,webapps
+Re-zip the files to create a jar with the same name as the one that you unzipped. Place the tweeked jar back in the Eclipse plugin directory and restart Eclipse. Configure a new Tomcat 5.5 instance but point it at a Tomcat 6 install. 

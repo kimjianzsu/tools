@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:ServerRuntime
+	xmlns:tns="http://eclipse.org/jst/server/generic/ServerTypeDefinition"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://eclipse.org/jst/server/generic/ServerTypeDefinition ServerTypeDefinitionSchema.xsd "
+	name="Generic BEA WebLogic Server v9.0" version="v9.0">
+
+    <property id="serverRootDirectory"
+		label="%ApplicationServerDirectory"
+		type="directory"
+		context="runtime"
+		default="C:/bea/weblogic90" />
+	<property id="domainDirectory"
+		label="%beaDomainDirectory"
+		type="directory"
+		context="server"
+		default="${serverRootDirectory}/samples/domains/wl_server" />
+    <property id="autoDeployDirectory"
+		label="%beaAutoDeployDirectory"
+		type="directory"
+		context="server"
+		default="${serverRootDirectory}/samples/domains/wl_server/autodeploy" />
+	<property id="startScript"
+		label="%beaStartScript"
+		type="file"
+		context="server"
+		default="${serverRootDirectory}/samples/domains/wl_server/bin/startWeblogic.cmd" />
+	<property id="stopScript"
+		label="%beaStopScript"
+		type="file"
+		context="server"
+		default="${serverRootDirectory}/samples/domains/wl_server/bin/stopWeblogic.cmd" />
+	<property id="port"
+		label="%serverPort"
+		type="string"
+		context="server"
+		default="7001" />
+	<property id="debugPort"
+		label="%beaDebugPort"
+		type="string"
+		context="server"
+		default="8453" />
+	
+	<port>
+		<no>${port}</no>
+		<name>Http</name>
+		<protocol>http</protocol>
+	</port>
+
+	<module>
+		<type>jst.web</type>
+		<publishDir>${autoDeployDirectory}</publishDir>
+		<publisherReference>org.eclipse.jst.server.generic.antpublisher</publisherReference>
+	</module>
+
+	<module>
+		<type>jst.ejb</type>
+		<publishDir>${autoDeployDirectory}</publishDir>
+		<publisherReference>org.eclipse.jst.server.generic.antpublisher</publisherReference>
+	</module>
+
+    <module>
+		<type>jst.ear</type>
+		<publishDir>${autoDeployDirectory}</publishDir>
+		<publisherReference>org.eclipse.jst.server.generic.antpublisher</publisherReference>
+	</module>
+	
+	<project>
+		<classpathReference>weblogic</classpathReference>
+	</project>
+	
+	<start>
+		<environmentVariable>
+		   <name>debugFlag</name>
+		   <value>true</value>
+		</environmentVariable>
+		<environmentVariable>
+		   <name>DEBUG_PORT</name>
+		   <value>${debugPort}</value>
+		</environmentVariable>
+		<environmentVariable>
+		   <name>JAVA_OPTIONS</name>
+		   <value>-Dweblogic.ListenPort=${port}</value>
+		</environmentVariable>
+		<external>"${startScript}"</external>
+		<workingDirectory>${domainDirectory}</workingDirectory>
+		<debugPort>${debugPort}</debugPort>
+	</start>
+	
+	<stop>
+	    <environmentVariable>
+		   <name>ADMIN_URL</name>
+		   <value>t3://localhost:${port}</value>
+		</environmentVariable>
+		<external>"${stopScript}"</external>
+		<workingDirectory>${domainDirectory}</workingDirectory>
+	</stop>
+	
+	<publisher id="org.eclipse.jst.server.generic.antpublisher">
+		<publisherdata>
+			<dataname>build.file</dataname>
+			<datavalue>/buildfiles/weblogic.xml</datavalue>
+		</publisherdata>
+		<publisherdata>
+			<dataname>target.publish.jst.web</dataname>
+			<datavalue>deploy.j2ee.web</datavalue>
+		</publisherdata>
+		<publisherdata>
+			<dataname>target.publish.jst.ejb</dataname>
+			<datavalue>deploy.j2ee.ejb</datavalue>
+		</publisherdata>
+		<publisherdata>
+			<dataname>target.unpublish.jst.web</dataname>
+			<datavalue>undeploy.j2ee.web</datavalue>
+		</publisherdata>
+		<publisherdata>
+			<dataname>target.unpublish.jst.ejb</dataname>
+			<datavalue>undeploy.j2ee.ejb</datavalue>
+		</publisherdata>
+		<publisherdata>
+			<dataname>target.publish.jst.ear</dataname>
+			<datavalue>deploy.j2ee.ear</datavalue>
+		</publisherdata>
+		<publisherdata>
+			<dataname>target.unpublish.jst.ear</dataname>
+			<datavalue>undeploy.j2ee.ear</datavalue>
+		</publisherdata>					
+	</publisher>
+
+	<classpath id="weblogic">
+		<archive path="${serverRootDirectory}/server/lib/api.jar" />
+	</classpath>
+	
+	<jndiConnection>
+		<providerUrl>t3://localhost:${port}</providerUrl>
+		<initialContextFactory>weblogic.jndi.WLInitialContextFactory</initialContextFactory>
+		<jndiProperty>
+			<name></name>
+			<value></value>
+		</jndiProperty>
+	</jndiConnection>
+
+</tns:ServerRuntime>

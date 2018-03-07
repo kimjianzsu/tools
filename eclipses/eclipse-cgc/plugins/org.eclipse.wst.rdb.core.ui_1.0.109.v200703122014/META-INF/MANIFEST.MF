@@ -1,0 +1,37 @@
+Manifest-Version: 1.0
+Bundle-Name: %pluginName
+Bundle-ClassPath: rdb.core.ui.jar
+Bundle-Activator: org.eclipse.wst.rdb.core.internal.ui.RDBCoreUIPlugin
+Bundle-Vendor: %providerName
+Bundle-ManifestVersion: 2
+Bundle-Localization: plugin
+Bundle-SymbolicName: org.eclipse.wst.rdb.core.ui; singleton:=true
+Require-Bundle: org.eclipse.ui;bundle-version="[3.2.0,4.0)",org.eclips
+ e.core.runtime;bundle-version="[3.2.0,4.0)",org.eclipse.emf.ecore;bun
+ dle-version="[2.2.0,3.0)",org.eclipse.emf.ecore.xmi;bundle-version="[
+ 2.2.0,3.0)",org.eclipse.wst.rdb.models.sql;bundle-version="[1.0.102,1
+ .1.0)",org.eclipse.wst.rdb.core;bundle-version="[1.0.106,1.2.0)",org.
+ eclipse.wst.rdb.models.dbdefinition;bundle-version="[1.0.101,1.1.0)",
+ org.eclipse.core.resources;bundle-version="[3.2.0,4.0)",com.ibm.icu;b
+ undle-version="[3.4.4,3.7.0)"
+Export-Package: org.eclipse.wst.rdb.core.internal.ui;x-internal:=true,
+ org.eclipse.wst.rdb.core.internal.ui.dialogs;x-internal:=true,org.ecl
+ ipse.wst.rdb.core.internal.ui.explorer.filter;x-internal:=true,org.ec
+ lipse.wst.rdb.core.internal.ui.explorer.helpers;x-internal:=true,org.
+ eclipse.wst.rdb.core.internal.ui.explorer.providers.content.virtual;x
+ -internal:=true,org.eclipse.wst.rdb.core.internal.ui.explorer.provide
+ rs.decorators;x-internal:=true,org.eclipse.wst.rdb.core.internal.ui.e
+ xplorer.providers.decorators.impl;x-internal:=true,org.eclipse.wst.rd
+ b.core.internal.ui.explorer.providers.label;x-internal:=true,org.ecli
+ pse.wst.rdb.core.internal.ui.explorer.services;x-internal:=true,org.e
+ clipse.wst.rdb.core.internal.ui.explorer.virtual;x-internal:=true,org
+ .eclipse.wst.rdb.core.internal.ui.icons;x-internal:=true,org.eclipse.
+ wst.rdb.core.internal.ui.l10n;x-internal:=true,org.eclipse.wst.rdb.co
+ re.internal.ui.preferences;x-internal:=true,org.eclipse.wst.rdb.core.
+ internal.ui.services;x-internal:=true,org.eclipse.wst.rdb.core.intern
+ al.ui.util;x-internal:=true,org.eclipse.wst.rdb.core.internal.ui.util
+ .resources;x-internal:=true,org.eclipse.wst.rdb.core.internal.ui.widg
+ ets;x-internal:=true
+Bundle-Version: 1.0.109.v200703122014
+Eclipse-LazyStart: true
+

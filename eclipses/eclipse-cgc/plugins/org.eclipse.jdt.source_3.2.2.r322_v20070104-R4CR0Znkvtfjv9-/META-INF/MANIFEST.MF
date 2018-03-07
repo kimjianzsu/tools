@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.jdt.source; singleton=true
+Bundle-Version: 3.2.2.r322_v20070104-R4CR0Znkvtfjv9-
+Bundle-Localization: plugin
+Bundle-Vendor: %providerName

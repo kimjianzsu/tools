@@ -1,0 +1,81 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<html>
+
+
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="help.css">
+
+
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+
+<title>Delete elements</title>
+
+
+
+
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+<h1>Delete elements&nbsp;</h1>
+
+<p>When you delete a Rational ClearCase element in the Rational Developer
+product, ClearCase checks out the parent directory, performs a <b>
+
+cleartool</b> <b> rmname</b> operation in the VOB, and checks in the parent directory
+if the <b>Window &gt; Preferences &gt;
+        Team &gt; Rational ClearCase &gt; <a href="PrParDir.htm">When parent directory is automatically checked out to move, rename, or delete an element</a></b>
+
+        preference is set to <b>Automatically check in parent directory</b>. If the parent directory is
+checked out when you delete files or folders, ClearCase does not check it in. &nbsp;</p>
+
+        <p style="margin-top: 12">If you want to delete multiple Rational
+        Developer files or folders in the same directory as a single change to
+        the directory, check out the directory, delete the files or folders in the Rational
+        Developer product,
+        then check in the directory.
+
+        <p style="margin-top: 12">If you are using ClearCase UCM, a delete operation
+        always uses the current activity.
+<p>Conflicts can arise if a developer working on a shared branch of
+      ClearCase checks in the parent directory but not the corresponding
+      changes. To avoid problems, set the <b>Window &gt; Preferences &gt;
+        Team &gt; Rational ClearCase &gt; <a href="PrParDir.htm">When parent directory is automatically checked out to move, rename, or delete an element</a></b>
+
+      preference to <b>Do nothing</b> and check in all files or folders that
+contain code changes related to the deleted files or folders, along with the source and destination directories.&nbsp;</p>
+<p style="margin-top: 12">If you cancel the checkout (<b><a href="UndoCOut.htm">Undo Check Out</a></b>)
+of a directory before checking it in, the deletion process
+  is cancelled also and deleted files and folders reappear. ClearCase does
+not cancel the checkouts
+        of files or folders in the directory that you are deleting. To avoid
+problems, resolve any checkouts in that directory or any subdirectories before
+you delete.
+<p style="margin-top: 12"><B>Related tasks<br>
+</B><a href="PrParDir.htm">When parent directory is automatically checked out to move, rename, or  delete an element</a>
+
+
+
+<p class="copyright">(C) Copyright IBM Corporation 2000, 2006. All Rights Reserved.</p>
+
+
+
+</body>
+
+
+
+</html>
+

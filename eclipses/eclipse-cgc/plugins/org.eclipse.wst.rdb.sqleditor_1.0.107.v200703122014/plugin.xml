@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+     <!-- Register the SQL Editor and the Action Contributor class for the SQL Editor. -->
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            icon="icons/sql_editor.gif"
+            class="org.eclipse.wst.rdb.sqleditor.internal.SQLEditor"
+            name="%sqlEditorName"
+            contributorClass="org.eclipse.wst.rdb.sqleditor.internal.SQLEditorActionContributor"
+            id="org.eclipse.wst.rdb.sqleditor.SQLEditor"
+            extensions="sql,ddl">
+      </editor>
+   </extension>
+
+<!-- Register the DocumentSetupParticipant class for the SQL Editor. -->
+<!-- Note: In order to make the SQL Editor more reusable, the DocumentSetupParticipant 
+     is set up in the main SQL Editor class rather than here.
+   <extension
+         point="org.eclipse.core.filebuffers.documentSetup"
+         id="SQLEditorDocumentSetupParticipant"
+         name="%documentSetupParticipantName">
+      <participant
+            extensions="%sqlEditorFileExtensions"
+            class="org.eclipse.wst.rdb.sqleditor.SQLEditorDocumentSetupParticipant">
+      </participant>
+   </extension>
+-->
+
+   <!-- Register a factory for recreating SQLEditorFileEditorInput objects when
+        the Workbench is restarted. -->
+   <extension 
+      point = "org.eclipse.ui.elementFactories"> 
+         <factory 
+            id ="org.eclipse.wst.rdb.sqleditor.SQLEditorInputFactory" 
+            class="org.eclipse.wst.rdb.sqleditor.internal.SQLEditorInputFactory"> 
+         </factory> 
+   </extension> 
+
+   
+</plugin>

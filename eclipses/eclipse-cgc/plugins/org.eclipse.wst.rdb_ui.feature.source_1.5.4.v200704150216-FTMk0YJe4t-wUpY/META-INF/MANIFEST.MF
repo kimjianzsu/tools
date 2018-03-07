@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.wst.rdb_ui.feature.source; singleton=true
+Bundle-Version: 1.5.4.v200704150216-FTMk0YJe4t-wUpY
+Bundle-Localization: plugin
+Bundle-Vendor: %providerName

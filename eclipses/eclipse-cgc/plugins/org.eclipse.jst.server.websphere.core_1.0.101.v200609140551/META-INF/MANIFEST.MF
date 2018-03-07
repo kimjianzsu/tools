@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+Bundle-Name: WebSphere Generic Server Definition Core Plug-in
+Bundle-ClassPath: webspherecore.jar
+Bundle-Activator: org.eclipse.jst.server.websphere.core.CorePlugin
+Bundle-Vendor: Eclipse.org
+Bundle-ManifestVersion: 2
+Bundle-Localization: plugin
+Bundle-SymbolicName: org.eclipse.jst.server.websphere.core; singleton:
+ =true
+Export-Package: org.eclipse.jst.server.websphere.core
+Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.2.0,4.0.0)
+ ",org.eclipse.core.resources;bundle-version="[3.2.0,4.0.0)",org.eclip
+ se.debug.core;bundle-version="[3.2.0,4.0.0)",org.eclipse.jdt.core;bun
+ dle-version="[3.2.0,4.0.0)",org.eclipse.jdt.launching;bundle-version=
+ "[3.2.0,4.0.0)",org.eclipse.wst.server.core;bundle-version="[1.0.102,
+ 1.2.0)",org.eclipse.jst.server.core;bundle-version="[1.0.102,1.2.0)",
+ org.eclipse.jst.server.ui;bundle-version="[1.0.102,1.2.0)",org.eclips
+ e.jst.j2ee;bundle-version="[1.1.0,1.2.0)",org.eclipse.jst.j2ee.core;b
+ undle-version="[1.1.0,1.2.0)",org.eclipse.jst.j2ee.web;bundle-version
+ ="[1.1.0,1.2.0)",org.eclipse.jst.server.generic.core;bundle-version="
+ [1.0.100,1.2.0)",org.eclipse.jst.server.generic.ui;bundle-version="[1
+ .0.100,1.2.0)",org.eclipse.emf.ecore.xmi;bundle-version="[2.2.0,2.3.0
+ )",org.eclipse.wst.common.modulecore;bundle-version="[1.1.0,1.2.0)",o
+ rg.eclipse.core.runtime;bundle-version="[3.2.0,4.0.0)",org.eclipse.co
+ re.resources;bundle-version="[3.2.0,4.0.0)",org.eclipse.wst.common.co
+ re;bundle-version="[1.0.0,1.2.0)",org.eclipse.wst.common.project.face
+ t.core;bundle-version="[1.0.0,1.2.0)",org.eclipse.jst.common.project.
+ facet.core;bundle-version="[1.0.0,1.2.0)",org.eclipse.wst.common.proj
+ ect.facet.ui;bundle-version="[1.0.0,1.2.0)"
+Bundle-Version: 1.0.101.v200609140551
+Eclipse-LazyStart: true
+

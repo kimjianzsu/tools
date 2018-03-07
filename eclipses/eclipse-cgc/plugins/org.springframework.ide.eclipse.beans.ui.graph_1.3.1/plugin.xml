@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin
+   id="org.springframework.ide.eclipse.beans.ui.graph"
+   name="%pluginName"
+   version="1.3.1"
+   provider-name="%providerName"
+   class="org.springframework.ide.eclipse.beans.ui.graph.BeansGraphPlugin">
+
+   <runtime>
+      <library name="beans-graph.jar">
+         <export name="*"/>
+      </library>
+   </runtime>
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.ui.views"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor"/>
+      <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.jdt.core"/>
+      <import plugin="org.eclipse.gef"/>
+      <import plugin="org.springframework.ide.eclipse.core"/>
+      <import plugin="org.springframework.ide.eclipse.ui"/>
+      <import plugin="org.springframework.ide.eclipse.beans.core"/>
+      <import plugin="org.springframework.ide.eclipse.beans.ui"/>
+   </requires>
+
+
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            name="%graphEditor.name"
+            icon="icons/full/obj16/spring_obj.gif"
+            contributorClass="org.springframework.ide.eclipse.beans.ui.graph.actions.GraphActionBarContributor"
+            class="org.springframework.ide.eclipse.beans.ui.graph.editor.GraphEditor"
+            id="org.springframework.ide.eclipse.beans.ui.graph.editor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <viewerContribution
+            targetID="#BeansViewContext"
+            id="org.springframework.ide.eclipse.beans.ui.graph.actions.beansViewContext">
+         <visibility>
+            <or>
+               <objectClass
+                     name="org.springframework.ide.eclipse.beans.ui.views.model.ConfigNode">
+               </objectClass>
+               <objectClass
+                     name="org.springframework.ide.eclipse.beans.ui.views.model.ConfigSetNode">
+               </objectClass>
+               <objectClass
+                     name="org.springframework.ide.eclipse.beans.ui.views.model.BeanNode">
+               </objectClass>
+            </or>
+         </visibility>
+         <action
+               label="%popupMenus.showGraph.label"
+               class="org.springframework.ide.eclipse.beans.ui.graph.actions.ShowGraphAction"
+               menubarPath="additions"
+               id="org.springframework.ide.eclipse.beans.ui.graph.actions.showGraph">
+         </action>
+      </viewerContribution>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.elementFactories">
+      <factory
+            class="org.springframework.ide.eclipse.beans.ui.graph.editor.GraphEditorInputFactory"
+            id="org.springframework.ide.eclipse.beans.ui.graph.editor.inputfactory"/>
+   </extension>
+
+</plugin>

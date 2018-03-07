@@ -1,0 +1,82 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<html>
+
+
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="help.css">
+
+
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+
+<title>Rename elements</title>
+
+
+
+
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+<h1> Rename elements</h1>
+
+<p>When you use the Rational Developer product to rename a file or folder that is under
+source control, ClearCase checks out the parent directory, renames the
+file or folder, and checks in the parent directory if the <b>Window &gt; Preferences &gt;
+        Team &gt; Rational ClearCase &gt; <a href="PrParDir.htm">When parent directory is automatically checked out to move, rename, or delete an element</a></b>
+preference is set to <b>Automatically check in parent directory</b>. If the parent directory is
+checked out when you
+        perform a rename operation, ClearCase does not
+        check in the directory after you rename the elements.</p>
+
+        <p style="margin-top: 12">If you want to rename multiple Rational
+        Developer files or folders that reside in the same directory as a single directory
+        version change, check out the parent directory
+        out of ClearCase, rename the files or folders in the Rational Developer
+        product, and check in the directory.
+
+        <p style="margin-top: 12">If you are using UCM, a rename operation
+        always uses the current activity.
+<p>Conflicts can arise if a developer working on a shared branch checks in the parent directory but not the corresponding
+      changes. To avoid problems, set the <b>Window &gt; Preferences &gt;
+        Team &gt; Rational ClearCase &gt; <a href="PrParDir.htm">When parent directory is automatically checked out to move, rename, or delete an element</a></b>
+
+      preference to <b>Do nothing</b> and verify that all files or folders
+      containing code changes related to the renamed files or folders are
+      checked in to ClearCase, along with the source and destination directories.
+
+      <p style="margin-top: 12">If you cancel the checkout (<b><a href="UndoCOut.htm">Undo Check Out</a>)
+  </b> on the directory before checking it in, the rename process
+  is also cancelled and file or folder names revert to their previous state. To undo a
+      Rational Developer renaming operation in ClearCase, verify that neither the parent directory nor the renamed elements
+      are checked in before canceling the checkout. When you are
+      finished, right-click the
+    parent directory in the Rational Developer product and click <b>Team &gt; <a href="RefrStat.htm">Refresh Status</a></b>.
+
+      <p style="margin-top: 12"><B>Related tasks<br>
+      </B><a href="PrParDir.htm">When parent directory is automatically checked out to move, rename, or  delete an element</a>
+
+
+
+<p class="copyright">(C) Copyright IBM Corporation 2000, 2006. All Rights Reserved.</p>
+
+
+
+</body>
+
+
+
+</html>
+

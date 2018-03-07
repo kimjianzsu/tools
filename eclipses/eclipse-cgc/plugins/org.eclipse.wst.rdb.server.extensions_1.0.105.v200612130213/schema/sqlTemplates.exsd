@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.eclipse.wst.rdb.server.extensions">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="org.eclipse.wst.rdb.server.extensions" id="sqlTemplates" name="SQL Templates"/>
+      </appInfo>
+      <documentation>
+         [Enter description of this extension point.]
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <complexType>
+         <sequence>
+            <element ref="templates" minOccurs="0" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="templates">
+      <annotation>
+         <documentation>
+            This element defines a set of SQL templates.
+The templates are organised in a base directory (baseDir) containing a set of subdirectories coresponding to the vendors (vendorDir), containing itslef a set of template files (templateFile) for various objects.
+The vendorDirectory and templateFile elements allows defining the name for the vendor directories and template file names, so that it is not necessary to define an element for each (vendor/template) pair.
+If a template is not applicable for a vendor, the file can simply be ommited.
+         </documentation>
+      </annotation>
+      <complexType>
+         <sequence>
+            <choice minOccurs="0" maxOccurs="unbounded">
+               <element ref="vendorDirectory"/>
+               <element ref="templateFile"/>
+            </choice>
+         </sequence>
+         <attribute name="baseDir" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Base directory of the templates, relatively to the plugin directory.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="vendorDirectory">
+      <annotation>
+         <documentation>
+            Defines the directory containing the templates for a given vendor.
+It is possible to create various elements pointing to the same directory, for example of several products share their templates.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="vendorId" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Vendor (product) ID as defined in the dbdefinition extension point.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="vendorDir" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Name of the directory containing the templates for a specific vendor.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="templateFile">
+      <annotation>
+         <documentation>
+            Defines the template file names contained in the vendor directories.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="objectClass" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Class name of the node used to invoke the template (an IVirtualNode).
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="templateFile" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Filename of the template.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="title" type="string">
+            <annotation>
+               <documentation>
+                  Title used as the template editor name.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         [Enter the first release in which this extension point appears.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         [Enter extension point usage example here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="apiInfo"/>
+      </appInfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="implementation"/>
+      </appInfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="copyright"/>
+      </appInfo>
+      <documentation>
+         
+      </documentation>
+   </annotation>
+
+</schema>

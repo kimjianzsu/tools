@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.jem.source; singleton=true
+Bundle-Version: 1.2.4.v200704181020--6zXJK0L0SE3a95
+Bundle-Localization: plugin
+Bundle-Vendor: %providerName

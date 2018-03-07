@@ -1,0 +1,55 @@
+How to install/upgrade:
+- extract eclipse-cgc.zip to C:\java\
+
+
+****** Package 20070622-1 by Leo Liang
+
+Eclipse SDK 3.2.2 M20070212-1330
+
+Plugins:
+- Graphical Editing Framework (GEF) 3.2.2
+- Maven 2.0 integration 0.0.10 (http://m2eclipse.codehaus.org/update/)
+- Spring IDE 1.3.6 (http://springide.org/updatesite/)
+- Eclipse-cs Checkstyle (http://eclipse-cs.sourceforge.net/update/)
+- Rational ClearCase SCM Adapter 7.0.0.20061206A (http://www-128.ibm.com/developerworks/rational/library/content/03July/2500/2834/ClearCase/clearcase_plugins.html)
+- Eclipse-tools: implementors 0.0.16 (http://eclipse-tools.sourceforge.net/updates/)
+
+
+****** Package 20070704-2 by Zoe Zhu
+
+Eclipse SDK 3.2.2 M20070212-1330
+
+Splash screen updated
+-the splash screeen is updated with Ericsson logo
+
+Default settings:
+-org.eclipse.core.resources/encoding=UTF-8
+-org.eclipse.jdt.ui/formatter_profile=_CGC (JavaStyleFormatter_Eclipse_PA1.xml)
+-org.eclipse.update.core/org.eclipse.update.core.proxy.host=iproxy-bj.cn.ao.ericsson.se
+-org.eclipse.update.core/org.eclipse.update.core.proxy.port=8080
+-Modify In-Build configuration of Checkstyle:CGC Checks(checkstyle_PA1.xml)
+
+Plugins:
+- Web Tools Platform (http://download.eclipse.org/webtools/updates/)
+  Features in the WTP:
+  -Eclipse Modeling Framework (EMF) 2.2.2.v200702131851
+  -Java EMF Model SDK (JEM) 1.2.4v200704140333
+  -XML Schema Infoset Model (XSD)2.2.2.v200702131851
+  -EMF Service Data Objects (SDO)2.2.1.v200702131851
+  -Web Standard Tools (WST)Project SDK 1.5.4.v200704200440
+  -J2EE Standard Tools (JST) Project SDK 1.5.4.v200704150219
+   
+   
+
+****** Package 20070705-3 by Zoe Zhu
+
+Eclipse SDK 3.2.2 M20070212-1330
+
+Default settings:
+- Web and XML - JSP file - encoding set to be "UTF-8" 
+  org.eclipse.jst.jsp.core/outputCodeset=UTF-8
+
+Plugins:
+- Properties Editors for Eclipse 3.x 4.8.2(http://propedit.sourceforge.jp/eclipse/updates/)
+- JBPM jbpm-gpd-site-3.0.12.zip  (http://sourceforge.net/project/showfiles.php?group_id=70542&package_id=116692&release_id=457153)
+- EasyExplore 1.0.4 (http://sourceforge.net/projects/easystruts/) (http://easystruts.sourceforge.net/eclipse/updates/ not latest)

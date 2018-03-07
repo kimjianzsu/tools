@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Generated-from: 1216694072000;type=10
+Bundle-ManifestVersion: 2
+Bundle-Name: Lockness - Thread Dump Analyzer
+Bundle-SymbolicName: com.cr.lockness.Lockness; singleton:=true
+Bundle-Version: 3.1.0
+Bundle-ClassPath: lockness.jar
+Bundle-Activator: com.cr.lockness.LocknessPlugin
+Bundle-Vendor: CR
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.jface.text,
+ org.eclipse.core.resources,
+ org.eclipse.ui.editors,
+ org.eclipse.ui.ide,
+ org.eclipse.ui.workbench.texteditor,
+ org.eclipse.jdt.core,
+ org.eclipse.jdt.ui
+Eclipse-LazyStart: true

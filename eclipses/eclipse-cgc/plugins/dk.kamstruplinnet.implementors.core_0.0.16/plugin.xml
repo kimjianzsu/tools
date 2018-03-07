@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+     <extension-point id="implementorproviders" name="Implementor Providers" schema="schema/implementorproviders.exsd"/>
+
+   <extension
+         point="dk.kamstruplinnet.implementors.core.implementorproviders">
+      <provider
+            class="dk.kamstruplinnet.implementors.core.JavaImplementorFinder">
+      </provider>
+   </extension>
+
+</plugin>

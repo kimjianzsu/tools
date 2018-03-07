@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Generated-from: 1183600556000;type=10
+Bundle-ManifestVersion: 2
+Bundle-Name: jBPM Help Plug-in
+Bundle-SymbolicName: org.jbpm.gd.jpdl.help; singleton:=true
+Bundle-Version: 3.0.12
+Bundle-Vendor: JBoss, Inc.
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.help
+Eclipse-LazyStart: true

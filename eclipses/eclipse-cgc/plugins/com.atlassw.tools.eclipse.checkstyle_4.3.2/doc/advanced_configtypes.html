@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="CONTENT-TYPE" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+<title>eclipse-cs: Configuration types</title>
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" class="maintable">
+<tr>
+<td class="mainsection">
+<table style="height: 100%" cellspacing="0" cellpadding="0" width="100%" border="0">
+<tr>
+<td>
+<table cellpadding="0" cellspacing="0" class="header">
+<tr>
+<td style="text-align: left; width=100%">
+<img alt="eclipse-cs Banner" src="images/banner.gif" />
+</td>
+<td style="vertical-align: middle; width: 75px; height: 75px;">
+<a class="imagelink" href="http://sourceforge.net/">
+<img alt="SourceForge.net Logo" src="http://sourceforge.net/sflogo.php?group_id=80344&amp;amp;type=1" />
+</a>
+<a class="imagelink" href="http://sourceforge.net/donate/index.php?group_id=80344">
+<img alt="Support This Project" src="http://images.sourceforge.net/images/project-support.jpg" />
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="content">
+        <h2>-- Configuration types --</h2>
+        <p>Since the 4.0.0 release the Checkstyle Plug-in uses plain Checkstyle configuration files.
+            For easier reuse of existing Checkstyle configurations and to support some common use
+            cases different Configuration types were introduced into the plug-in. The following
+            section explains the existing configuration types:</p>
+        <h3>Built-in Configuration</h3>
+        <p>
+<a id="Builtin" shape="rect"> </a>Built-in configurations come shipped with the plug-in (or an
+            extending fragment). They can not be edited nor deleted. <br /> You can create an own
+            configuration based on a built-in (or any other) configuration by copying the
+            configuration. <br />Built-in configurations cannot be created by the user but can be
+            added through a fragment which extends the plugin. <br />Please read <a href="extending_builtin_configurations.html" shape="rect">here</a> for more info.</p>
+        <h3>Internal Configuration</h3>
+        <p>
+<a id="Internal" shape="rect"> </a>Internal configurations are stored within the Eclipse metadata. Use
+            an internal configuration if you don't want to manage the location of your
+            configuration by yourself. <br />
+<img src="images/new_internal_config.jpg" alt="Internal Configuration" />
+<br /> You need to provide a unique name for
+            the configuration, the plugin will generate a file name on its own and store the
+            configuration file within the plugins state location inside the workspace.</p>
+        <p>An existing Checkstyle configuration file can be imported into the internal configuration
+            by using the <em>Import...</em> button. Note that this will overwrite the existing setup
+            for this configuration.<br />If you ever need the configuration file outside the
+            plug-in use the export functionality.</p>
+        <p>Internal configurations can be edited and deleted (which will also delete the Checkstyle
+            configuration file).</p>
+        <h3>External Configuration</h3>
+        <p>
+<a id="External" shape="rect"> </a>Use this configuration type if you have a Checkstyle configuration
+            file outside of an Eclipse workspace in your file system. <br /> The External
+            Configuration just points to this configuration file and uses it from its location.
+                <br />
+<img src="images/new_external_config.jpg" alt="External Configuration" />
+<br /> You need to provide a unique name for the configuration together with
+            the full absolute path to the Checkstyle configuration file.<br />Relative paths are
+            not supported, but there is support to make the absolut path a bit dynamic to allow
+            differing absolute paths on multiple developer machines.<br />To do this use
+                <em>${property}</em> style pattern(s) in the location string, these patterns will be
+            resolved from equally named Classpath Variables or Environment properties (passed into
+            Eclipse via -D parameter). </p>
+        <p>External configurations can by default be edited if the configuration file is
+            writable.<br />If you have a carefully crafted configuration file (with nice comments
+            and all that) - which you don't want to "destroy" accidently by using the configuration
+            editor - you can use the <em>Protect Checkstyle configuration file</em>
+            option.<br />When enabled the configuration editor will not touch your file even if
+            it is write enabled.<br /> If you delete an External Configuration from the plug-in
+            the external configuration file will <strong>not</strong> be deleted.</p>
+        <h3>Remote Configuration</h3>
+        <p>
+<a id="Remote" shape="rect"> </a>This configuration type can be used if you want to publish your
+            Checkstyle configuration on a web server and have all developer in your company use it.
+                <br />
+<img src="images/new_remote_config.jpg" alt="Remote Configuration" />
+<br />As usual a unique name must be provided together with the URL of the
+            Checkstyle configuration file.<br />If the webserver requires HTTP basic
+            authentication a popup dialog will request the credentials input.<br />Optionally you
+            can let the plugin store the password, which will be stored in the Eclipse
+            keyring.<br />While this offers a reasonable level of security it is not impossible
+            to crack.</p>
+        <p>For the travelling consultants out there - the <em>Cache configuration file</em> option
+            is for you.<br />When your company has deployed the Checkstyle configuration file on
+            an internal server which is of course not reachable when away at a customers site, using
+            this option will tell the plugin to cache the configuration file once it is
+            reachable.<br />When the configured location is not reachable anymore the plugin will
+            use the cached configuration file.<br />This allows you to use the same Checkstyle
+            configuration On- and Offsite.</p>
+        <p>A Remote Configuration can not be edited but can be removed from the plug-in.</p>
+        <h3>Project Relative Configuration (behaviour changed in 4.1.0)</h3>
+        <p>
+<a id="Project" shape="rect"> </a>If you have your Checkstyle configuration file inside a project in
+            your workspace the easiest thing is to use the Project Relative Configuration.<br />
+            <img src="images/new_project_config.jpg" alt="Project Relative Configuration" />
+<br /> Like always a unique name must be provided along with the relative path
+            consisting of <em>project-name/relative-path-in-project</em>.<br /> Using the
+                <em>Browse...</em> button you can easily select the configuration file from a
+            project.</p>
+        <p>A Project Relative configuration can be edited using the Configuration Editor when the
+            configuration file is writable. <br />Like with External Configuration type the
+            configuration file can be protected from accidently rewriting it with the Configuration
+            Editor.<br />When a Project Relative configuration is deleted the Checkstyle
+            configuration file remains untouched.</p>
+    </td>
+</tr>
+<tr>
+<td class="footer">
+<table style="text-align:top;" width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td style="width: 35px">
+<a href="#">
+<img alt="Back to top" src="images/top_button_left.gif" />
+</a>
+</td>
+<td class="copyright"> Copyright © 2002-2007 David Schneider, <a href="http://www.koedderitzsch.net">Lars Ködderitzsch</a>. All Rights
+					Reserved. </td>
+<td style="width: 35px">
+<a href="#">
+<img alt="Back to top" src="images/top_button_right.gif" />
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

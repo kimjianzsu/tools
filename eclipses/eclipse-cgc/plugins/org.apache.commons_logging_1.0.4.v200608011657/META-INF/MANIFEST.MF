@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-Name: %PLUGIN_NAME
+Bundle-ClassPath: lib/commons-logging-1.0.4.jar
+Bundle-Vendor: %PLUGIN_PROVIDER
+Bundle-ManifestVersion: 2
+Bundle-Localization: plugin
+Bundle-SymbolicName: org.apache.commons_logging
+Eclipse-BuddyPolicy: registered
+Require-Bundle: org.apache.jakarta_log4j;bundle-version="[1.2.8,1.3.0)
+ ";resolution:=optional
+Export-Package: org.apache.commons.logging,org.apache.commons.logging.
+ impl
+Bundle-Version: 1.0.4.v200608011657
+

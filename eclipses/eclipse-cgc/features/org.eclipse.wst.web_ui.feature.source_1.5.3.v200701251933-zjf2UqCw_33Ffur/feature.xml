@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.wst.web_ui.feature.source"
+      label="%featureName"
+      version="1.5.3.v200701251933-zjf2UqCw_33Ffur"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://download.eclipse.org/webtools/updates/"/>
+   </url>
+
+   <includes
+         id="org.eclipse.wst.web_core.feature"
+         version="1.5.3.v200701251933--4hNDDhFfKVFaSL"/>
+
+   <includes
+         id="org.eclipse.wst.web_core.feature.source"
+         version="1.5.3.v200701251933--4hNDDhFfKVFaSL"/>
+
+   <plugin
+         id="org.eclipse.wst.web_ui.feature.source"
+         download-size="0"
+         install-size="0"
+         version="1.5.3.v200701251933-zjf2UqCw_33Ffur"/>
+
+</feature>

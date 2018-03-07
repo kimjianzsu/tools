@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.wsdl4j.feature"
+      label="%featureName"
+      version="1.4.0.v200606071500--0842292428384A"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="license.html">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://download.eclipse.org/webtools/updates/"/>
+   </url>
+
+   <requires>
+      <import feature="org.apache.xerces.feature" version="2.8.0"/>
+   </requires>
+
+   <plugin
+         id="org.wsdl4j"
+         download-size="0"
+         install-size="0"
+         version="1.4.0.v200702061629"/>
+
+</feature>

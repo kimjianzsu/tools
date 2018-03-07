@@ -1,0 +1,41 @@
+<project name="weblogicpublish"  default="deploy"  basedir=".">
+	<target name="init">
+		<taskdef name="wldeploy" classname="weblogic.ant.taskdefs.management.WLDeploy">
+    		<classpath>
+    			<fileset dir="${serverRootDirectory}">
+	    		  <include name="server/lib/weblogic.jar" /> 
+	    		</fileset>
+    		</classpath>
+        </taskdef>
+	</target>
+	
+	<target name="deploy" depends="init">
+		<echo>Deploying module ${module.name}</echo>
+    	<wldeploy
+	      action="deploy" 
+	      verbose="true" 
+	      debug="true"
+	      nowait="false"
+	      name="${module.name}"
+	      source="${module.dir}"
+    	  user="${username}"
+    	  password="${password}"
+    	  failonerror="true"
+	      adminurl="t3://localhost:${port}"/>
+	</target>
+
+	<target name="undeploy" depends="init">
+		<echo>Undeploying module ${module.name}</echo>
+		<wldeploy
+	      action="undeploy" 
+		  verbose="true" 
+		  debug="true"
+	      nowait="false"
+	      name="${module.name}"
+		  user="${username}"
+		  password="${password}"
+		  failonerror="true"
+	      adminurl="t3://localhost:${port}" />
+	</target>
+
+</project>

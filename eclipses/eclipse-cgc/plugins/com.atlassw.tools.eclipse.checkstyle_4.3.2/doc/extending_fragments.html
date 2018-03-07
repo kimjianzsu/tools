@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="CONTENT-TYPE" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+<title>eclipse-cs: Extending the plug-in - The advanced way</title>
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" class="maintable">
+<tr>
+<td class="mainsection">
+<table style="height: 100%" cellspacing="0" cellpadding="0" width="100%" border="0">
+<tr>
+<td>
+<table cellpadding="0" cellspacing="0" class="header">
+<tr>
+<td style="text-align: left; width=100%">
+<img alt="eclipse-cs Banner" src="images/banner.gif" />
+</td>
+<td style="vertical-align: middle; width: 75px; height: 75px;">
+<a class="imagelink" href="http://sourceforge.net/">
+<img alt="SourceForge.net Logo" src="http://sourceforge.net/sflogo.php?group_id=80344&amp;amp;type=1" />
+</a>
+<a class="imagelink" href="http://sourceforge.net/donate/index.php?group_id=80344">
+<img alt="Support This Project" src="http://images.sourceforge.net/images/project-support.jpg" />
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="content">
+        <h2>-- Extending the plug-in - The advanced way --</h2>
+        <p>A more Eclipse conforming way to extend the Checkstyle plug-in would be to provide a so
+            called fragment. <br /> Fragments are extensions to a plug-in that get merged in to the
+            original plug-in - so these fragments get basically integrated into the plug-in as if
+            they were part of the original plug-in. <br /> This mean they have no life cycle on their
+            own but share the life cycle of the plug-in they extend.</p>
+        <p>While just copying some jars into the plug-in directory is a very simple way to extend
+            the Checkstyle plug-in, providing a fragment for custom checks is more complicated, but
+            gives you some other powerful options:</p>
+        <ul>
+            <li>
+                <p>Your extension to the plug-becomes self contained - no need to copy anything into
+                    the plug-in directory</p>
+            </li>
+            <li>
+                <p>You can provide an update site to deliver the fragment to your users</p>
+            </li>
+            <li>
+                <p>You can make use of the extension-points the Checkstyle plug-in provides (for
+                    filters, built-in configurations etc.)</p>
+            </li>
+        </ul>
+        <p>So here are the steps for creating a fragment that adds a custom check library to the
+            Checkstyle plug-in:</p>
+        <ol>
+            <li>Create your custom .jar like described <a href="extending_custom_checks.html" shape="rect">here</a> . </li>
+            <li>Create a new fragment project <br />
+                <p>
+                    <img src="images/extending_fragments_html_m2b0c642e.jpg" alt="Fragment Project                         Wizard" />
+                    <br />
+                </p>
+                <p>
+                    <img src="images/extending_fragments_html_m49de31b9.jpg" alt="Fragment Project                         Wizard" />
+                    <br />
+                </p>
+                <p>
+                    <img src="images/extending_fragments_html_mea508ae.jpg" alt="Fragment Project                         Wizard" />
+                    <br /> Choose the Checkstyle plug-in from the list of plug-ins that appears when
+                    you hit the <i>Browse...</i> button. <br /> Finish creating the fragment project
+                    by pressing <i>Finish</i>.</p>
+            </li>
+            <li> Copy your jar file containing you custom checks into the fragment project <br />
+                <p>
+                    <img src="images/extending_fragments_html_m32cc9d1b.jpg" alt="Project View" />
+                </p>
+            </li>
+            <li> Open the MANIFEST.MF file and add your custom library to the fragments classpath <br />
+                <br />
+                <p>
+                    <img src="images/fragment_manifest_editor.png" alt="Manifest editor" />
+                    <br /> Don't forget to save the manifest editor.</p>
+            </li>
+            <li>
+                <p>To "build" your fragment simply use the export wizard <br />
+                    <br />
+                </p>
+                <p>
+                    <img src="images/extending_fragments_html_m247a49b8.jpg" alt="Export wizard" />
+                    <br />
+                </p>
+                <p>
+                    <img src="images/extending_fragments_html_m17f44216.jpg" alt="Export wizard" />
+                </p>
+            </li>
+            <li>
+                <p>Install the fragment to your Eclipse just like you would install a plug-in</p>
+            </li>
+            <li>
+                <p>(Re)start your eclipse with the -clean option to make sure the changes get picked
+                    up</p>
+            </li>
+        </ol>
+    </td>
+</tr>
+<tr>
+<td class="footer">
+<table style="text-align:top;" width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td style="width: 35px">
+<a href="#">
+<img alt="Back to top" src="images/top_button_left.gif" />
+</a>
+</td>
+<td class="copyright"> Copyright © 2002-2007 David Schneider, <a href="http://www.koedderitzsch.net">Lars Ködderitzsch</a>. All Rights
+					Reserved. </td>
+<td style="width: 35px">
+<a href="#">
+<img alt="Back to top" src="images/top_button_right.gif" />
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

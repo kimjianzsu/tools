@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<!-- ========================== -->
+<!-- Define topics for the Reference -->
+<!-- ========================== -->
+<toc label="Reference">
+  <topic label="Rational ClearCase menu options" href="doc/RefMain.htm" />
+  <topic label="ClearCase menu" href="doc/CCMenu.htm" />
+  <topic label="Team context menu" href="doc/CCContxt.htm" />
+  <topic label="ClearCase Help" href="doc/CCHelp.htm" />
+  <topic label="ClearCase SCM Adapter preferences" href="doc/CCPrefs.htm" />
+  <topic label="ClearCase icons" href="doc/CCIcons.htm" />
+</toc>

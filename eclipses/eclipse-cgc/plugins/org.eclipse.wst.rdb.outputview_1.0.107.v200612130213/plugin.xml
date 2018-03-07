@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+    	<extension-point
+		id="xmlTabs"
+		name="Tabs for XML"
+		schema="schema/xmlTabs.exsd" />	
+		
+	<extension-point
+		id="xmlResults"
+		name="Result for XML data type"
+		schema="schema/xmlResults.exsd"/>
+
+    <extension-point 
+        id="additionalOutputViewTabs"
+        name="Additional Output View Tabs"
+        schema="schema/additionalOutputViewTabs.exsd"/>	
+	
+	<extension
+         point="org.eclipse.ui.views">
+      <view
+            name="%ID_OUTPUT_VIEW"
+            icon="icons/tv_ec_outputview.gif"
+            category="datatools.server.ui.category"
+            class="org.eclipse.wst.rdb.internal.outputview.OutputView"
+            id="org.eclipse.wst.rdb.internal.outputview.OutputView">
+      </view>
+   </extension>
+
+</plugin>

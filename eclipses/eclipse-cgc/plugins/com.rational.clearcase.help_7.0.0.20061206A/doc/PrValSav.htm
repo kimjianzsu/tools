@@ -1,0 +1,91 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<html>
+
+
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="help.css">
+
+
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+
+<title>When checked in files are saved by an internal editor</title>
+
+
+
+
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+<h1>When checked in files are saved by an internal editor</h1>
+
+<p>This <a href="CCPrefs.htm">ClearCase SCM Adapter preference</a> specifies
+Rational ClearCase behavior when you attempt to save a Rational Developer file that
+is not currently checked out.</p>
+
+<p>If you want ClearCase to
+check out files without being notified, select <b>Automatically checkout</b>. The automatic checkout process is necessary
+for Rational Developer operations such as refactoring.&nbsp;If you do not want ClearCase to
+automatically check out files, select <b>Do nothing</b>.</p>
+
+
+
+<p> You cannot change the
+activity that is associated with the file during the automatic checkout. To
+change the activity associated with a file, you must check out the file
+directly.</p>
+
+
+
+<blockquote>
+
+  <p><b>Attention: </b>If you are using a shared branch in a dynamic view, the
+  automatic checkout process could create a potential conflict. While you are
+  editing a file that is not checked out, another project team member can check out, edit, and check in the same file before you attempt to save it.
+
+  When you save the file, the automatic checkout process silently checks
+  out the latest version of it and when you check in the file, your edits overwrite the previous
+  edits made by the other team member. To avoid problems, always check out files
+  before editing them.</p>
+
+
+
+</blockquote>
+
+  <p>By default, this option is set to <b>Automatically checkout</b>.</p>
+
+
+
+<P><B>Related concepts</B></p>
+
+
+
+<p><a href="PrIntEd.htm">When checked in files are edited by an internal, interactive editor<br>
+
+</a><a href="PrNIntEd.htm">When checked in files are edited by an internal, non-interactive editor</a></p>
+
+
+
+<p class="copyright">(C) Copyright IBM Corporation 2000, 2006. All Rights Reserved.</p>
+
+
+
+</body>
+
+
+
+</html>
+

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.jst.sdk"
+      label="%featureName"
+      version="1.5.4.v200704150219-dnUU6nyMbgExb_A"
+      provider-name="%providerName"
+      plugin="org.eclipse.jst"
+      image="eclipse_update_120.jpg">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="license.html">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://download.eclipse.org/webtools/updates"/>
+      <discovery label="Web Tools Platform (WTP) Updates" url="http://download.eclipse.org/webtools/updates"/>
+   </url>
+
+   <includes
+         id="org.eclipse.jst"
+         version="1.5.4.v200704150219-kW-NuyxHh4-w7-n"/>
+
+   <includes
+         id="org.eclipse.jst.common_sdk.feature"
+         version="1.5.3.v200701251934-8422923473A56--"/>
+
+   <includes
+         id="org.eclipse.jst.server_sdk.feature"
+         version="1.5.4.v200704150241-8422923473A56--"/>
+
+   <includes
+         id="org.eclipse.jst.web_sdk.feature"
+         version="1.5.4.v200704150236-8422923473A56--"/>
+
+   <includes
+         id="org.eclipse.jst.enterprise_sdk.feature"
+         version="1.5.4.v200704150248-842292637246_02"/>
+
+   <includes
+         id="org.eclipse.jst.doc.isv.feature"
+         version="1.5.4.v200704150226--08422926384332"/>
+
+   <includes
+         id="org.eclipse.jst"
+         version="1.5.4.v200704150219-kW-NuyxHh4-w7-n"/>
+
+</feature>

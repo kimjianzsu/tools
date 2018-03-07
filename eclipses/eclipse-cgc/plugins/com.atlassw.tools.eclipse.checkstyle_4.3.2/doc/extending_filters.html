@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="CONTENT-TYPE" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+<title>eclipse-cs: Writing a custom plug-in filter</title>
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" class="maintable">
+<tr>
+<td class="mainsection">
+<table style="height: 100%" cellspacing="0" cellpadding="0" width="100%" border="0">
+<tr>
+<td>
+<table cellpadding="0" cellspacing="0" class="header">
+<tr>
+<td style="text-align: left; width=100%">
+<img alt="eclipse-cs Banner" src="images/banner.gif" />
+</td>
+<td style="vertical-align: middle; width: 75px; height: 75px;">
+<a class="imagelink" href="http://sourceforge.net/">
+<img alt="SourceForge.net Logo" src="http://sourceforge.net/sflogo.php?group_id=80344&amp;amp;type=1" />
+</a>
+<a class="imagelink" href="http://sourceforge.net/donate/index.php?group_id=80344">
+<img alt="Support This Project" src="http://images.sourceforge.net/images/project-support.jpg" />
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="content">
+        <h2>-- Writing a custom plug-in filter --</h2>
+        <p>As you surely know by now, the Eclipse Checkstyle Plug-in sports filters to exclude files
+            from the checks.<br /> These filters are available on the plug-ins project properties
+            page.</p>
+        <p>
+<img src="images/properties_simple_checked.png" alt="Properties page" />
+            <br /> If filters are activated for a project they exclude certain files of the project
+            from the checks based on their specific implementation.</p>
+        <p>Many useful filters are <a href="advanced_filters.html" shape="rect">already coming</a> with the
+            plug-in distribution.<br /> However you may need to implement other filters that are very
+            specific to your environment.</p>
+        <p>To enable you to write your own filters the plug-in defines an extension point for
+            filters <span class="code-blue">com.atlassw.tools.eclipse.checkstyle.filters</span>.<br /> To define and write your own
+            filter you need to know how the Eclipse plug-in extension scheme works.<br /> Please
+            understand that we can hardly give you a tutorial on how Eclipse plug-ins are
+            developed.<br /> The target is to provide a so called fragment, that extends the plugin
+            in some points (through the extension points) but is no full plugin by itself. How to
+            create a feature is explained <a href="extending_fragments.html" shape="rect">here</a>. <br />
+            <br />
+        </p>
+        <p>Example:</p>
+        <p>Using the <span class="code-blue">com.atlassw.tools.eclipse.checkstyle.filters</span>
+            extension point in your <span class="code-blue">fragment.xml</span>
+</p>
+        <p>
+            <span class="code-blue">&lt;extension</span>
+            <br />
+            <span class="code-blue">    id=</span>
+            <span class="code-green">"checkstyle.CheckstyleFilters"</span>
+            <br />
+            <span class="code-blue">    point=</span>
+            <span class="code-green">"com.atlassw.tools.eclipse.checkstyle.filters"</span>
+            <span class="code-blue">&gt;</span>
+            <br />
+            <span class="code-blue">    &lt;filter</span>
+            <br />
+            <span class="code-blue">        name=</span>
+            <span class="code-green">"%WriteProtectedFilter.label"</span>
+            <br />
+            <span class="code-blue">        internal-name=</span>
+            <span class="code-green">"WriteProtectedFiles"</span>
+            <br />
+            <span class="code-blue">        description=</span>
+            <span class="code-green">"%WriteProtectedFilter.description"</span>
+            <br />
+            <span class="code-blue">        class=</span>
+            <span class="code-green">"com.atlassw.tools.eclipse.checkstyle.projectconfig.filters.WriteProtectedFilter"</span>
+            <span class="code-blue">&gt;</span>
+            <br />
+            <span class="code-blue">    &lt;/filter&gt;</span>
+            <br />
+            <span class="code-blue">&lt;/extension&gt;</span>
+            <br />
+        </p>
+        <p>The filter implementation class must implement the <span class="code-blue">com.atlassw.tools.eclipse.checkstyle.projectconfig.filters.IFilter</span>
+            interface.<br /> To make life a bit easier for you there is the <span class="code-blue">com.atlassw.tools.eclipse.checkstyle.projectconfig.filters.AbstractFilter</span>
+            class which implements already most of the filter interface.</p>
+        <p>A simple filter implementation (like <span class="code-blue">WriteProtectedFilter</span>)
+            looks like this:</p>
+        <p>
+            <span class="code-black">
+                <b>
+                    <span class="code-purple">public class</span>
+                </b>  WriteProtectedFilter <b>
+                    <span class="code-purple"> extends</span>
+                </b>  AbstractFilter<br /> {<br />
+                <span class="code-lightblue">  /**</span>
+<br />
+                <span class="code-lightblue">   *</span>
+                <b>
+                    <span class="code-lightblue"> @see</span>
+                </b>
+                <span class="code-lightblue"> IFilter#accept(java.lang.Object)</span>
+<br />
+                <span class="code-lightblue">   */</span>
+<br />
+                <b>
+                    <span class="code-purple">  public</span>
+                </b>
+<b>
+                    <span class="code-purple"> boolean</span>
+                </b> accept(Object element)<br />   {<br />
+                <b>
+                    <span class="code-purple">    boolean</span>
+                </b> passes = <b>
+                    <span class="code-purple">true</span>
+                </b>
+<span class="code-black">;</span>
+<br />
+                <b>
+                    <span class="code-purple">    if</span>
+                </b> (element <b>
+                    <span class="code-purple">instanceof</span>
+                </b> IResource)<br />     {<br />
+                      passes = !((IResource)
+                element).isReadOnly();<br />     }<br />
+                <b>
+                    <span class="code-purple">    return</span>
+                </b> passes;<br />   }<br /> }<br />
+            </span>
+        </p>
+        <p>We hope you get the idea.<br /> To get further insight how this stuff is working we
+            recommend looking into the plug-ins sources as all filters coming with the plug-in are
+            using this mechanism too.</p>
+    </td>
+</tr>
+<tr>
+<td class="footer">
+<table style="text-align:top;" width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td style="width: 35px">
+<a href="#">
+<img alt="Back to top" src="images/top_button_left.gif" />
+</a>
+</td>
+<td class="copyright"> Copyright © 2002-2007 David Schneider, <a href="http://www.koedderitzsch.net">Lars Ködderitzsch</a>. All Rights
+					Reserved. </td>
+<td style="width: 35px">
+<a href="#">
+<img alt="Back to top" src="images/top_button_right.gif" />
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

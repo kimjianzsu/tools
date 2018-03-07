@@ -1,0 +1,92 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<html>
+
+
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="help.css">
+
+
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+
+<title>Move elements</title>
+
+
+
+
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+<h1> Move elements</h1>
+
+<p>When you move a file or folder that is a Rational ClearCase element in the
+Rational Developer product, ClearCase checks out the parent directory, performs the
+move operation in the VOB, and checks in the parent directory if the <b>Window &gt; Preferences &gt;
+        Team &gt; Rational ClearCase &gt; <a href="PrParDir.htm">When parent directory is automatically checked out to move, rename, or  delete an element</a></b>
+preference is set to <b>Automatically check in parent directory</b>. If a source or destination directory is
+checked out when you
+        perform the move operation, ClearCase does not
+        check it in.&nbsp;</p>
+
+<p> If you move an element between VOBs,
+the version currently in your view is copied to the new location and removed from the old location.
+The history of the element is not
+        available at the new location and you are prompted to add the element to source control.
+When you move an element between VOBs, the ClearCase SCM
+      Adapter ignores the setting of the <b>When parent directory is
+      automatically checked out to move, rename, or delete an element</b>
+      preference.</p>
+
+        <p style="margin-top: 12">To move multiple Rational Developer files or folders
+        that reside in the same directory as a single directory change, check out the directory, perform the
+        move operations in the Rational Developer product,
+        then check in the directory.&nbsp; If you are using ClearCase UCM, a move operation
+        always uses the current activity.
+<p>Conflicts<b> </b>can arise if a developer working on a shared branch checks in the parent directory but not the corresponding
+      changes. To avoid problems, set the <b>Window &gt; Preferences &gt;
+        Team &gt; ClearCase SCM Adapter &gt; <a href="PrParDir.htm">When parent directory is automatically checked out to move, rename, or delete an element</a></b>
+
+      preference to <b>Do nothing</b> and verify that all files or folders
+      containing code changes related to the files or folders you moved are
+      checked in. The source and destination directories must also be checked
+in.
+
+      <p style="margin-top: 12">If you cancel a checkout on a directory<b> </b>before checking it
+      in by using <b><a href="UndoCOut.htm">Undo Check Out</a></b>, the move process
+  is undone. If the source directory is not checked in before the checkout is
+      cancelled, any files or folders that you moved out of the source directory
+      reappear. If the destination directory is not checked in before the
+      checkout is cancelled, the destination directory no longer
+      contains the files of folders you moved into it.&nbsp;To undo a Rational
+      Developer move operation in ClearCase, verify that neither the parent directory nor the renamed elements
+      are checked in before canceling the checkout. After clicking <b>Undo Check Out</b>, right-click the
+    parent directory in the Rational Developer product and choose <b>Team -&gt; Refresh Status</b>.
+
+      <p style="margin-top: 12"><B>Related tasks<br>
+      </B><a href="PrParDir.htm">When parent directory is automatically checked out to move, rename, or  delete an element</a>
+
+
+
+<p class="copyright">(C) Copyright IBM Corporation 2000, 2006. All Rights Reserved.</p>
+
+
+
+</body>
+
+
+
+</html>
+

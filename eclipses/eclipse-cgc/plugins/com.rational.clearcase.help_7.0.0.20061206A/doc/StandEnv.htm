@@ -1,0 +1,80 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<html>
+
+
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="help.css">
+
+
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+
+<title>Creating a standardized development environment</title>
+
+
+
+
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+<h1>Creating a standardized development environment</h1>
+
+<p>This topic provides information about creating a standardized development
+environment in the Rational ClearCase SCM Adapter. A standardized development environment provides a
+consistent workspace, build process, and environment settings.</p>
+
+
+
+<p>When possible, use Team Project Sets which allow developers to import multiple projects at one time and
+do not require an understanding of project dependencies. See <a href="AddProj.htm">Import a Rational Developer project</a>
+for information about importing team project sets.</p>
+
+
+
+<p>You can use shared external JAR files for third party components. This
+practice eliminates dependencies on local build environments and avoids incompatibilities
+between versions of JAR files. A Rational Developer project must include all JAR
+files that are necessary to build.</p>
+
+
+
+<p>Placing external JAR files under source control allows you to use
+a common classpath for the external JAR files. If you are using ClearCase UCM,
+you can store in a common UCM component the JAR files that are shared between
+multiple projects.</p>
+
+
+
+<p>You can also use the <a href="CCPrefs.htm">Rational ClearCase Preferences</a> to
+create a standardized development environment.</p>
+
+
+
+<p><B>Related concepts<br>
+</B><a href="Metadata.htm">Working with Metadata</a></p>
+
+
+
+<p class="copyright">(C) Copyright IBM Corporation 2000, 2006. All Rights Reserved.</p>
+
+
+
+</body>
+
+
+
+</html>
+

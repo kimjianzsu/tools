@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.wst.rdb_core.feature"
+      label="%featureName"
+      version="1.5.4.v200704150216--3YIAAbBLDOFLJX"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://download.eclipse.org/webtools/updates/"/>
+   </url>
+
+   <plugin
+         id="org.eclipse.wst.rdb.core"
+         download-size="0"
+         install-size="0"
+         version="1.1.121.v200704131847"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.rdb.models.sql"
+         download-size="0"
+         install-size="0"
+         version="1.0.104.v200612130213"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.rdb.models.dbdefinition"
+         download-size="0"
+         install-size="0"
+         version="1.0.103.v200702062139"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.rdb.data.core"
+         download-size="0"
+         install-size="0"
+         version="1.0.108.v200703122014"
+         unpack="false"/>
+
+</feature>

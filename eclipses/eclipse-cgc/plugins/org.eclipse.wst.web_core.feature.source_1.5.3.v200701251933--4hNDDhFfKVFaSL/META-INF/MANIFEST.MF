@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.wst.web_core.feature.source; singleton=true
+Bundle-Version: 1.5.3.v200701251933--4hNDDhFfKVFaSL
+Bundle-Localization: plugin
+Bundle-Vendor: %providerName

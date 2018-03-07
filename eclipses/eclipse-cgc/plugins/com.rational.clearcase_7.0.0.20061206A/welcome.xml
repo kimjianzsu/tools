@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<welcomePage 
+	title="Rational ClearCase SCM Adapter">
+        <intro>This page will help familiarize you with Rational ClearCase.
+To get started, read the sections below and click on the related links.
+</intro>
+
+	<item>Use the Rational ClearCase integration to place your WebSphere Studio projects 
+under ClearCase source control. For information about ClearCase procedures that apply
+to WebSphere Studio, see <topic href="/com.rational.clearcase.help/doc/Tasks.htm">tasks</topic>.</item>
+<item>Use the ClearCase menu options to share projects within both WebSphere Studio 
+and ClearCase. For information about ClearCase menu options available with WebSphere 
+Studio, see <topic href="/com.rational.clearcase.help/doc/RefMain.htm">Rational ClearCase Menu Options</topic>.</item>
+<item>Use the ClearCase preferences to customize your installation of ClearCase. For 
+information about setting ClearCase preferences within WebSphere Studio, see 
+<topic href="/com.rational.clearcase.help/doc/CCPrefs.htm">Rational ClearCase Preferences</topic>.</item>
+</welcomePage>

@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.jst.web_ui.feature.source; singleton=true
+Bundle-Version: 1.5.3.v200701251934--2PD88P8T_IB_EI
+Bundle-Localization: plugin
+Bundle-Vendor: %providerName

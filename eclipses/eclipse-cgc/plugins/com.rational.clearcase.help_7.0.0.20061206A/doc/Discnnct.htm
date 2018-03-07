@@ -1,0 +1,89 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<html>
+
+
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="help.css">
+
+
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+
+<title>Working in disconnected mode</title>
+
+
+
+
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+<h1>Working in disconnected mode</h1>
+
+<p>To work in disconnected mode, take the following steps:</p>
+
+
+
+<ol>
+
+  <li>Update your snapshot view.<br>
+
+  </li>
+
+  <li>Disconnect from ClearCase by clicking <b>ClearCase &gt; Connect to
+    ClearCase</b> to toggle it off.<br>
+
+  </li>
+
+  <li>Disconnect from the network.<br>
+
+  </li>
+
+  <li>Start the Rational Developer product but do not connect to ClearCase. You may need to clear
+    the <a href="PrConnct.htm">Automatically Connect to ClearCase at Startup</a>
+
+    preference check box.<br>
+
+  </li>
+
+  <li>Use the <a href="Hijack.htm">Hijack</a> option to modify files. Using this option makes
+    read-only files in a snapshot view writeable.&nbsp;<br>
+    <br>
+    Avoid operations that rename or move files as these are difficult to reconcile
+    after reconnecting.<br>
+
+  </li>
+
+  <li>Reconnect to the network, connect to ClearCase (note that it may take several minutes before you can perform
+    ClearCase operations), update the view by clicking <b>ClearCase &gt; <a href="UpdtView.htm">Update View</a></b>,
+
+    resolve any hijacked files, and use the <a href="FindReso.htm">Find Resources to Add to Source Control</a>
+
+    option.</li>
+
+</ol>
+
+<p><B>Related tasks</B><br><a href="Dcon.htm">Disconnect from ClearCase</a></p>
+
+<p class="copyright">(C) Copyright IBM Corporation 2000, 2006. All Rights Reserved.</p>
+
+
+
+</body>
+
+
+
+</html>
+

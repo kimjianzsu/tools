@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+	  id="jp.gr.java_conf.ussiy.app.propedit"
+	  label="%featureName"
+	  version="4.8.2"
+	  provider-name="%providerName"
+	  image="icons/pe_32.gif">
+
+   <description url="%descriptionUrl">
+	  %description
+   </description>
+
+   <copyright>
+	  %copyright
+   </copyright>
+
+   <license url="%licenseUrl">
+	  %license
+   </license>
+
+   <url>
+	  <update label="%updateSiteName" url="http://propedit.sourceforge.jp/eclipse/updates/"/>
+	  <discovery label="%discoverySiteName" url="http://propedit.sourceforge.jp/eclipse/updates/"/>
+   </url>
+
+   <requires>
+	  <import plugin="org.eclipse.core.runtime" version="3.0.0" match="compatible"/>
+	  <import plugin="org.eclipse.ui" version="3.0.0" match="compatible"/>
+   </requires>
+
+   <plugin
+		 id="jp.gr.java_conf.ussiy.app.propedit"
+		 version="4.8.2"
+		 download-size="138"
+		 install-size="447"/>
+
+</feature>

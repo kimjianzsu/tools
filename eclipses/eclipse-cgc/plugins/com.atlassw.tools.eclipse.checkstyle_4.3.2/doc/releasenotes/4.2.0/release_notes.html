@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="CONTENT-TYPE" />
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+<title>eclipse-cs: Release notes</title>
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" class="maintable">
+<tr>
+<td class="mainsection">
+<table style="height: 100%" cellspacing="0" cellpadding="0" width="100%" border="0">
+<tr>
+<td>
+<table cellpadding="0" cellspacing="0" class="header">
+<tr>
+<td style="text-align: left; width=100%">
+<img alt="eclipse-cs Banner" src="../../images/banner.gif" />
+</td>
+<td style="vertical-align: middle; width: 75px; height: 75px;">
+<a class="imagelink" href="http://sourceforge.net/">
+<img alt="SourceForge.net Logo" src="http://sourceforge.net/sflogo.php?group_id=80344&amp;amp;type=1" />
+</a>
+<a class="imagelink" href="http://sourceforge.net/donate/index.php?group_id=80344">
+<img alt="Support This Project" src="http://images.sourceforge.net/images/project-support.jpg" />
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="content">
+        <h2>-- New and Noteworthy (4.2.0) --</h2>
+        <ul>
+            <li>
+                <p>Tested as working with the lastest Eclipse 3.3 Milestone (M4)</p>
+            </li>
+            <li>
+                <p>More on Quickfixes</p>
+                <p>A new context menu action ('Apply Checkstyle fixes') was added to the Java editor
+                    and other views (e.g. Package Explorer) which - when invoked - tries to apply
+                    all existing quickfixes to the Checkstyle violations in the selected file.</p>
+                <img alt="New Apply Checkstyle fixes action" src="quickfixes_before.jpg" />
+                <img alt="New Apply Checkstyle fixes action result" src="quickfixes_after.jpg" />
+                <p> Additionaly new quickfixes were implemented for the following Checkstyle checks: </p>
+                <ul>
+                    <li>FinalLocalVariable</li>
+                    <li>StringLiteralEquality</li>
+                    <li>FinalClass</li>
+                    <li>ArrayTypeStyle</li>
+                    <li>UncommentedMain</li>
+                    <li>UpperEll</li>
+                    <li>ModifierOrder</li>
+                </ul>
+                <br />
+            </li>
+            <li>
+                <p>Copying a Check Configuration allows now to create External and Project Relative
+                    Configurations</p>
+            </li>
+            <li>
+                <p>When creating a External or Project Relative Configuration it is now possible to
+                    input the path to a (not yet) existing file. THe plugin then asks if the file
+                    should be created.</p>
+            </li>
+            <li>
+                <p>EclipsePluginCentral voting client</p>
+                <p>Tell us and other users what you like or like not about the Eclipse Checkstyle
+                    Plugin by voting on EclipsePluginCentral. To ease this up the plugin now
+                    contains a voting client, which sends the votes to EclipsePluginCentral.</p>
+                <img alt="New EPC voting client" src="voting.jpg" />
+            </li>
+        </ul>
+
+        <h2>-- Fixed Bugs --</h2>
+        <ul>
+            <li>
+                <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1600492&amp;group_id=80344&amp;atid=559494" shape="rect">1600492 Javadocs not displayed when mouse hovers over a java element</a>
+            </li>
+            <li>
+                <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1601570&amp;group_id=80344&amp;atid=559494" shape="rect">1601570 Package selection dialog (Package filter) shows too much</a>
+            </li>
+            <li>
+                <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1579086&amp;group_id=80344&amp;atid=559494" shape="rect">1579086 MissingSwitchDefault Quickfix doesn't work proper</a>
+            </li>
+            <li>
+                <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1608976&amp;group_id=80344&amp;atid=559494" shape="rect">1608976 Need Braces QuickFix is not working as expected</a>
+            </li>
+        </ul>
+
+        <h2>-- Resolved Feature Requests --</h2>
+        <ul>
+            <li>
+                <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1541488&amp;group_id=80344&amp;atid=559497" shape="rect">1541488 Plugin should check builder order</a>
+            </li>
+            <li>
+                <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1423948&amp;group_id=80344&amp;atid=559497" shape="rect">1423948 Quickfix</a>
+            </li>
+            <li>
+                <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1464521&amp;group_id=80344&amp;atid=559497" shape="rect">1464521 Copying configurations</a>
+            </li>
+            <li>
+                <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1607736&amp;group_id=80344&amp;atid=559497" shape="rect">1607736 Implement quickfix for UpperEll</a>
+            </li>
+            <li>
+                <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1607735&amp;group_id=80344&amp;atid=559497" shape="rect">1607735 Implement quickfix for UncommentedMain</a>
+            </li>
+            <li>
+                <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1607729&amp;group_id=80344&amp;atid=559497" shape="rect">1607729 Implement quickfix for StringLiteralEquality</a>
+            </li>
+            <li>
+                <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1607728&amp;group_id=80344&amp;atid=559497" shape="rect">1607728 Implement quickfix for FinalLocalVariable</a>
+            </li>
+            <li>
+                <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1607732&amp;group_id=80344&amp;atid=559497" shape="rect">1607732 Implement quickfix for FinalClass</a>
+            </li>
+        </ul>
+    </td>
+</tr>
+<tr>
+<td class="footer">
+<table style="text-align:top;" width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td style="width: 35px">
+<a href="#">
+<img alt="Back to top" src="../../images/top_button_left.gif" />
+</a>
+</td>
+<td class="copyright"> Copyright © 2002-2007 David Schneider, <a href="http://www.koedderitzsch.net">Lars Ködderitzsch</a>. All Rights
+					Reserved. </td>
+<td style="width: 35px">
+<a href="#">
+<img alt="Back to top" src="../../images/top_button_right.gif" />
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

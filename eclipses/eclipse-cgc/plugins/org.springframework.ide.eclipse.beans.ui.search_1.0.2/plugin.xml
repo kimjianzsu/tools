@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin
+   id="org.springframework.ide.eclipse.beans.ui.search"
+   name="%pluginName"
+   version="1.0.2"
+   provider-name="%providerName"
+   class="org.springframework.ide.eclipse.beans.ui.search.BeansSearchPlugin">
+   <runtime>
+      <library name="search.jar">
+         <export name="*"/>
+      </library>
+   </runtime>
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.search"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.jdt.core"/>
+      <import plugin="org.springframework.ide.eclipse.core"/>
+      <import plugin="org.springframework.ide.eclipse.beans.core"/>
+      <import plugin="org.springframework.ide.eclipse.beans.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.ui.views"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor"/>
+      <import plugin="org.eclipse.jdt.core"/>
+      <import plugin="org.eclipse.jdt.ui"/>
+      <import plugin="org.springframework.ide.eclipse.core"/>
+      <import plugin="org.springframework.ide.eclipse.ui"/>
+      <import plugin="org.springframework.ide.eclipse.beans.core"/>
+   </requires>
+   <extension
+         point="org.eclipse.search.searchPages">
+      <page
+            id="org.springframework.ide.eclipse.beans.ui.search.searchPage"
+            class="org.springframework.ide.eclipse.beans.ui.search.BeansSearchPage"
+            label="%searchPage.label"
+            icon="icons/full/obj16/spring_search_obj.gif"
+            extensions="*"
+            enabled="true"
+            canSearchEnclosingProjects="true"
+            showScopeSection="true"/>
+   </extension>
+   <extension
+         point="org.eclipse.search.searchResultViewPages">
+      <viewPage
+            id="org.springframework.ide.eclipse.beans.ui.search.resultViewPage"
+            class="org.springframework.ide.eclipse.beans.ui.search.BeansSearchResultPage"
+            searchResultClass="org.springframework.ide.eclipse.beans.ui.search.internal.BeansSearchResult"/>
+   </extension>
+
+	<extension point="org.eclipse.ui.actionSets">
+		<actionSet
+			id="org.springframework.ide.eclipse.beans.search.actionSet"
+	        label="%actionSet.label"
+			visible="true">
+	      	<menu
+	            id="org.eclipse.search.menu"
+	            label="%searchMenu.label"
+	            path="navigate">
+	         	<groupMarker name="internalDialogGroup"/>
+	         	<groupMarker name="dialogGroup"/>
+                 <separator name="contextMenuActionsGroup"/>
+                 <separator name="internalOccurrencesGroup"/>
+	      	</menu>
+			<action id="org.springframework.ide.eclipse.beans.search.openBeansSearchPageAction"
+				definitionId="org.springframework.ide.eclipse.beans.search.actions.openBeansSearchPage"
+				menubarPath="org.eclipse.search.menu/dialogGroup"
+				label="%action.openBeansSearchPage.label"
+				icon="icons/full/obj16/spring_search_obj.gif"
+				class="org.springframework.ide.eclipse.beans.ui.search.actions.OpenBeansSearchPageAction"/>
+		</actionSet>
+   </extension>
+
+	<extension point="org.eclipse.ui.commands">
+		<command
+			id="org.springframework.ide.eclipse.beans.search.actions.openBeansSearchPage"
+			name="%command.openBeansSearchPage.name"
+			description="%command.openBeansSearchPage.description"
+			categoryId="org.eclipse.ui.category.views"/>
+   </extension>
+</plugin>

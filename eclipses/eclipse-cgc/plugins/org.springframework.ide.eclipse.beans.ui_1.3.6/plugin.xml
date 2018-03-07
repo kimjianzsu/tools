@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin
+   id="org.springframework.ide.eclipse.beans.ui"
+   name="%pluginName"
+   version="1.3.6"
+   provider-name="%providerName"
+   class="org.springframework.ide.eclipse.beans.ui.BeansUIPlugin">
+
+   <runtime>
+      <library name="beans-ui.jar">
+         <export name="*"/>
+      </library>
+   </runtime>
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.ui.views"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor"/>
+      <import plugin="org.eclipse.ui.cheatsheets"/>
+      <import plugin="org.eclipse.jdt.core"/>
+      <import plugin="org.eclipse.jdt.ui"/>
+      <import plugin="org.springframework.ide.eclipse.core"/>
+      <import plugin="org.springframework.ide.eclipse.ui"/>
+      <import plugin="org.springframework.ide.eclipse.beans.core"/>
+   </requires>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="%categoryView.springIDE"
+            id="org.springframework.ide.eclipse.beans.ui.views">
+      </category>
+      <view
+            name="%view.beansView"
+            icon="icons/full/obj16/spring_obj.gif"
+            category="org.springframework.ide.eclipse.beans.ui.views"
+            class="org.springframework.ide.eclipse.beans.ui.views.BeansView"
+            id="org.springframework.ide.eclipse.beans.ui.views.beansView">
+      </view>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.ui.resourcePerspective">
+         <showInPart
+               id="org.springframework.ide.eclipse.beans.ui.views.beansView">
+         </showInPart>
+      </perspectiveExtension>
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <showInPart id="org.springframework.ide.eclipse.beans.ui.views.beansView"/>
+      </perspectiveExtension>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.propertyPages">
+      <page
+            objectClass="org.eclipse.core.resources.IProject"
+            adaptable="true"
+            name="%projectPropertyPage"
+            class="org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage"
+            id="org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage">
+         <filter
+               name="nature"
+               value="org.springframework.ide.eclipse.core.springnature">
+         </filter>
+      </page>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.decorators">
+      <decorator
+            lightweight="true"
+            adaptable="false"
+            location="TOP_RIGHT"
+            label="%decorator.label"
+            state="true"
+            class="org.springframework.ide.eclipse.beans.ui.model.BeansModelLabelDecorator"
+            id="org.springframework.ide.eclipse.beans.ui.model.beansModelLabelDecorator">
+         <description>
+            %decorator.description
+         </description>
+         <enablement>
+            <or>
+               <objectClass
+                    name="org.eclipse.core.resources.IFile">
+               </objectClass>
+               <or>
+                  <objectClass name="org.eclipse.jdt.core.IJavaElement"/>
+              </or>
+            </or>
+         </enablement>
+      </decorator>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="org.springframework.ide.eclipse.beans.ui.wizards.category"
+            name="%wizards.category"/>
+      <wizard
+            id="org.springframework.ide.eclipse.beans.ui.wizards.newSpringProject"
+            category="org.springframework.ide.eclipse.beans.ui.wizards.category"
+            class="org.springframework.ide.eclipse.beans.ui.wizards.NewSpringProjectWizard"
+            finalPerspective="org.eclipse.jdt.ui.JavaPerspective"
+            hasPages="true"
+            icon="icons/full/etool16/newprj_wiz.gif"
+            name="%wizards.newProject.name"
+            preferredPerspectives="org.eclipse.jdt.ui.JavaPerspective,org.eclipse.jdt.ui.JavaBrowsingPerspective,org.eclipse.jdt.ui.JavaHierarchyPerspective"
+            project="true">
+         <description>
+         	%wizards.newProject.description
+         </description>
+      </wizard>
+      <!--wizard
+            id="org.springframework.ide.eclipse.beans.ui.wizards.newBeansConfig"
+            name="%wizards.newConfig.name"
+            class="org.springframework.ide.eclipse.beans.ui.wizards.NewBeansConfigWizard"
+            category="org.springframework.ide.eclipse.beans.ui.wizards.category"
+            icon="icons/full/etool16/newconfig_wiz.gif">
+         <description>
+            %wizards.newConfig.description
+         </description>
+         <selection
+               class="org.eclipse.core.resources.IResource">
+         </selection>
+      </wizard-->
+   </extension>
+ 
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            label="%actionSet.label"
+            visible="true"
+            id="org.springframework.ide.eclipse.beans.ui.actionSet">
+         <action
+               id="org.springframework.ide.eclipse.beans.ui.openBeanAction"
+               toolbarPath="org.eclipse.search.searchActionSet/Search"
+               class="org.springframework.ide.eclipse.beans.ui.actions.OpenBeanSelectionDialogAction"
+               definitionId="org.springframework.ide.eclipse.beans.ui.commands.openBean"
+               icon="icons/full/etool16/open_bean_obj.gif"
+               label="%action.openBean.label"
+               menubarPath="navigate/open.ext2"
+               tooltip="%action.openBean.tooltip">
+         </action>
+      </actionSet>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="org.springframework.ide.eclipse.beans.ui.commands.openBean"
+            name="%command.openBean.name"
+            categoryId="org.eclipse.ui.category.navigate"/>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            sequence="M3+M2+B"
+            commandId="org.springframework.ide.eclipse.beans.ui.commands.openBean"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+   </extension>
+
+</plugin>

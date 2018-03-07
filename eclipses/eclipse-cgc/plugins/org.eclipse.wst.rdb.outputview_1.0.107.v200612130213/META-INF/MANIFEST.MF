@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-Name: %OUTPUT_VIEW_PLUGIN_NAME
+Bundle-ClassPath: outputview.jar
+Bundle-Activator: org.eclipse.wst.rdb.internal.outputview.OutputViewPl
+ ugin
+Bundle-Vendor: %OUTPUT_VIEW_PLUGIN_OWNER
+Bundle-ManifestVersion: 2
+Bundle-Localization: plugin
+Bundle-SymbolicName: org.eclipse.wst.rdb.outputview; singleton:=true
+Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.2.0,4.0)",
+ org.eclipse.core.resources;bundle-version="[3.2.0,4.0)",org.eclipse.u
+ i;bundle-version="[3.2.0,4.0)",org.eclipse.wst.rdb.core.ui;bundle-ver
+ sion="[1.0.102,1.1.0)",org.eclipse.wst.rdb.core;bundle-version="[1.0.
+ 106,1.2.0)",org.eclipse.wst.rdb.data.core;bundle-version="[1.0.104,1.
+ 1.0)"
+Export-Package: org.eclipse.wst.rdb.internal.outputview;x-internal:=tr
+ ue,org.eclipse.wst.rdb.internal.outputview.actions;x-internal:=true,o
+ rg.eclipse.wst.rdb.internal.outputview.nl1;x-internal:=true
+Bundle-Version: 1.0.107.v200612130213
+Eclipse-LazyStart: true
+

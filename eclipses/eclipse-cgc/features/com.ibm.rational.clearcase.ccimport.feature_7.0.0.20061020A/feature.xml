@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.ibm.rational.clearcase.ccimport.feature"
+      label="%featureName"
+      version="7.0.0.20061020A"
+      provider-name="%providerName"
+      plugin="com.ibm.rational.clearcase.ccimport">
+
+   <description url="%descriptionURL">
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %licenseText
+   </license>
+
+   <plugin
+         id="com.ibm.rational.clearcase.ccimport"
+         download-size="0"
+         install-size="0"
+         version="7.0.0.20061020A"/>
+
+</feature>

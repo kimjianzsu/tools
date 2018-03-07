@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Generated-from: 1182495824000;type=2
+Bundle-ManifestVersion: 2
+Bundle-Name: com.rational.clearcase.help
+Bundle-SymbolicName: com.rational.clearcase.help; singleton:=true
+Bundle-Version: 7.0.0.20061206A
+Bundle-Vendor: IBM
+Bundle-Localization: plugin
+Eclipse-LazyStart: true

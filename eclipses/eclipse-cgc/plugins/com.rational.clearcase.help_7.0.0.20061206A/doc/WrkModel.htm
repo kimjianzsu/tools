@@ -1,0 +1,78 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<html>
+
+
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="help.css">
+
+
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+
+<title>Working with models</title>
+
+
+
+
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+<h1>Working with models</h1>
+
+<p>To avoid data corruption when you work with partitions of a composite model
+in Rational Software Architect or Rational Software Modeler, you should always
+work in a synchronized workspace that contains all the partitions of the
+composite, with each partition at the same revision level.</p>
+<p>The following example shows what can happen if you work with partitions of a
+composite model in an unsynchronized workspace.</p>
+<p>In a configuration management system, a composite model is made up of two
+model partitions, model X and model Y. Both models are at version 20. Model X
+contains one package, P1. Model Y is empty.</p>
+<blockquote>
+<p>1. User A checks out the two models, both
+at version 20.</p>
+<p>2. User A makes several changes to P1, and
+moves P1 from model X to model Y.</p>
+<p>3. User A checks in model X and model Y.
+Both files are now at version 21.</p>
+<p>4. User B has model X, version 20, in his
+workspace and makes a change to P1. The configuration management system prompts
+User B to either check out the existing version in the workspace (model X,
+version 20) or the newer version (model X, version 21).</p>
+</blockquote>
+<p>If User B selects the existing version in the workspace (model X, version
+20), he might have to repeat the operation that prompted the checkout.</p>
+<p>However, if User B selects the newer model version (model X, version 21), all
+the changes that User A made to the model are lost when User B saves the model.</p>
+
+
+
+<p><B>Related references<br>
+</B><a href="PrDiffMg.htm">Diff Merge Patterns<br>
+</a><a href="ManWksp.htm">Managing workspaces</a></p>
+
+
+
+<p class="copyright">(C) Copyright IBM Corporation 2000, 2006. All Rights Reserved.</p>
+
+
+
+</body>
+
+
+
+</html>
+

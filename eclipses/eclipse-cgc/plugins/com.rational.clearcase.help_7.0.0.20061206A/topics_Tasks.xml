@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<!-- ========================== -->
+<!-- Define topics for the Tasks -->
+<!-- ========================== -->
+<toc label="Tasks">
+  <topic label="Activating the ClearCase SCM Adapter" href="doc/Activate.htm" />
+  <topic label="Connect to ClearCase" href="doc/CCConnct.htm" />
+  <topic label="Using the Rational ClearCase SCM Adapter" href="doc/CCMain.htm" /> 
+  <topic label="Create a new ClearCase view" href="doc/CrView.htm" /> 
+  <topic label="Associate a workspace with a ClearCase view" href="doc/AsWkView.htm" /> 
+  <topic label="Create a new project in a ClearCase VOB" href="doc/CrProj.htm" /> 
+  <topic label="Import a Rational Developer project" href="doc/AddProj.htm" /> 
+  <topic label="Share a project" href="doc/SharProj.htm" /> 
+  <topic label="Check in or check out files" href="doc/Check.htm" /> 
+  <topic label="Add to Source Control" href="doc/AddToSC.htm" /> 
+  <topic label="Display ClearCase decorations" href="doc/DsplyDec.htm" /> 
+  <topic label="Import a WebSphere Studio 4.x project" href="doc/MigrTo5x.htm" /> 
+  <topic label="Importing an Eclipse Team Project Set" href="doc/ImpPrSet.htm" /> 
+  <topic label="Import an EAR file" href="doc/ImporEar.htm" /> 
+  <topic label="Rename elements" href="doc/Rename.htm" /> 
+  <topic label="Move elements" href="doc/Move.htm" /> 
+  <topic label="Delete elements" href="doc/DelFiles.htm" /> 
+  <topic label="Set preferences" href="doc/CCPrefs.htm" /> 
+  <topic label="Working in disconnected mode" href="doc/Discnnct.htm" /> 
+  <topic label="Upgrading the ClearCase SCM Adapter" href="doc/Update.htm" /> 
+</toc>

@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-Name: %PLUGIN_NAME
+Bundle-ClassPath: lib/wsil4j.jar
+Bundle-Vendor: %PLUGIN_PROVIDER
+Bundle-ManifestVersion: 2
+Bundle-Localization: plugin
+Bundle-SymbolicName: org.apache.wsil4j; singleton:=true
+Eclipse-BuddyPolicy: registered
+Require-Bundle: org.uddi4j;bundle-version="[2.0.4,2.1.0)",org.wsdl4j;b
+ undle-version="[1.4.0,1.5.0)",org.apache.axis;bundle-version="[1.3.0,
+ 1.4.0)"
+Export-Package: org.apache.wsil,org.apache.wsil.client,org.apache.wsil
+ .extension,org.apache.wsil.extension.uddi,org.apache.wsil.extension.w
+ sdl,org.apache.wsil.impl,org.apache.wsil.impl.extension,org.apache.ws
+ il.impl.extension.uddi,org.apache.wsil.impl.extension.wsdl,org.apache
+ .wsil.util,org.apache.wsil.xml
+Bundle-Version: 1.0.0.v200608161946
+

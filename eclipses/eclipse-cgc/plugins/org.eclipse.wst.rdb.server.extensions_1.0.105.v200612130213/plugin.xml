@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+     <extension-point id="DropSQLObjects" name="Drop SQL Objects" schema="schema/org.eclipse.wst.rdb.server.extensions.drop.exsd"/>
+   <extension-point id="sqlTemplates" name="SQL Templates" schema="schema/sqlTemplates.exsd"/>   
+ 
+ <!-- Show New Menu --> 
+ <extension point="org.eclipse.ui.popupMenus">
+         
+    <!-- New Table --> 
+      <viewerContribution
+            targetID="org.eclipse.wst.rdb.server.ui.navigator.serverExplorer"
+            id="org.eclipse.wst.rdb.server.ui.explorer.popupMenus">
+         <menu
+               id="org.eclipse.wst.rdb.server.extensions.actions.new"
+               label="%UI_MENU_NEW"
+               path="additions" >             
+               <separator 
+                    name="dataGroup"> 
+               </separator>
+         </menu>
+         <action
+               label="%UI_MENU_WITH_SQL_EDITOR"
+               icon="icons/open.gif"  
+               class="org.eclipse.wst.rdb.server.extensions.internal.actions.SQLTemplateAction"         
+               menubarPath="org.eclipse.wst.rdb.server.extensions.actions.new/dataGroup"              
+               enablesFor="1"
+               id="org.eclipse.wst.rdb.server.extensions.actions.table">
+         </action>
+         <visibility>
+            <or>
+               <objectClass
+                     name="org.eclipse.wst.rdb.core.internal.ui.explorer.virtual.ITableNode">
+               </objectClass>              
+            </or>
+         </visibility>
+      </viewerContribution> 
+       
+       <!-- New View -->  
+        <viewerContribution
+           targetID="org.eclipse.wst.rdb.server.ui.navigator.serverExplorer"
+           id="org.eclipse.wst.rdb.server.ui.explorer.popupMenus">
+         <menu
+               id="org.eclipse.wst.rdb.server.extensions.actions.new"
+               label="%UI_MENU_NEW"
+               path="additions" >             
+            <separator name="dataGroup"> </separator>
+         </menu>
+         <action
+               label="%UI_MENU_WITH_SQL_EDITOR"                 
+               icon="icons/open.gif"          
+               class="org.eclipse.wst.rdb.server.extensions.internal.actions.SQLTemplateAction"
+                menubarPath="org.eclipse.wst.rdb.server.extensions.actions.new/dataGroup"                
+               enablesFor="1"
+               id="org.eclipse.wst.rdb.server.extensions.actions.view">
+         </action>
+         <visibility>
+               <or>                                   
+               <objectClass
+               		 name="org.eclipse.wst.rdb.core.internal.ui.explorer.virtual.IViewNode">
+               </objectClass>               
+               </or>
+         </visibility>
+      </viewerContribution>    
+      
+      <!-- New UDT  -->  
+       <viewerContribution
+            targetID="org.eclipse.wst.rdb.server.ui.navigator.serverExplorer"
+            id="com.ibm.datatools.server.ui.explorer.popupMenus">
+         <menu
+               id="org.eclipse.wst.rdb.server.extensions.actions.new"
+               label="%UI_MENU_NEW"
+               path="additions" >             
+            <separator name="dataGroup"> </separator>
+         </menu>
+         <action
+               label="%UI_MENU_WITH_SQL_EDITOR"                    
+               icon="icons/open.gif"          
+               class="org.eclipse.wst.rdb.server.extensions.internal.actions.SQLTemplateAction"
+               menubarPath="org.eclipse.wst.rdb.server.extensions.actions.new/dataGroup"                           
+               enablesFor="1"
+               id="org.eclipse.wst.rdb.server.extensions.actions.udt">
+         </action>
+         <visibility>
+               <or>                                   
+               <objectClass
+               		 name="org.eclipse.wst.rdb.core.internal.ui.explorer.virtual.IUDTNode">
+               </objectClass>               
+               </or>
+         </visibility>
+      </viewerContribution>  
+     
+      <!-- New Sequence -->   
+       <viewerContribution
+            targetID="org.eclipse.wst.rdb.server.ui.navigator.serverExplorer"
+            id="org.eclipse.wst.rdb.server.ui.explorer.popupMenus">
+         <menu
+               id="org.eclipse.wst.rdb.server.extensions.actions.new"
+               label="%UI_MENU_NEW"
+               path="additions" >             
+            <separator name="dataGroup"> </separator>
+         </menu>
+         <action
+               label="%UI_MENU_WITH_SQL_EDITOR"                   
+               icon="icons/open.gif"          
+               class="org.eclipse.wst.rdb.server.extensions.internal.actions.SQLTemplateAction"
+               menubarPath="org.eclipse.wst.rdb.server.extensions.actions.new/dataGroup"              
+               enablesFor="1"
+               id="org.eclipse.wst.rdb.server.extensions.actions.sequence">
+         </action>
+         <visibility>
+               <or>                                   
+               <objectClass
+               		 name="org.eclipse.wst.rdb.core.internal.ui.explorer.virtual.ISequenceNode">
+               </objectClass>               
+               </or>
+         </visibility>
+      </viewerContribution>       
+       
+       
+      <!-- New Procedure  -->  
+      <viewerContribution
+            targetID="org.eclipse.wst.rdb.server.ui.navigator.serverExplorer"
+            id="org.eclipse.wst.rdb.server.ui.explorer.popupMenus">
+         <menu
+               id="org.eclipse.wst.rdb.server.extensions.newprocedure"
+               label="%UI_MENU_NEW"
+               path="additions" >             
+            <separator name="newProc"> </separator>
+         </menu>
+         <action
+               label="%UI_MENU_WITH_SQL_EDITOR"                   
+               icon="icons/open.gif"          
+               class="org.eclipse.wst.rdb.server.extensions.internal.actions.SQLTemplateAction"
+               menubarPath="org.eclipse.wst.rdb.server.extensions.newprocedure/newProc"              
+               enablesFor="1"
+               id="org.eclipse.wst.rdb.server.extensions.newProcedureWithEditor">
+         </action>           
+         <visibility>
+               <or>                                   
+               <objectClass
+               		 name="org.eclipse.wst.rdb.core.internal.ui.explorer.virtual.IStoredProcedureNode">
+               </objectClass>               
+               </or>
+         </visibility>
+      </viewerContribution>  
+       
+      <!-- New Function  -->  
+       <viewerContribution
+            targetID="org.eclipse.wst.rdb.server.ui.navigator.serverExplorer"
+            id="org.eclipse.wst.rdb.server.ui.explorer.popupMenus">
+         <menu
+               id="org.eclipse.wst.rdb.server.extensions.actions.new"
+               label="%UI_MENU_NEW"
+               path="additions" >             
+            <separator name="dataGroup"> </separator>
+         </menu>
+         <action
+               label="%UI_MENU_WITH_SQL_EDITOR"                   
+               icon="icons/open.gif"          
+               class="org.eclipse.wst.rdb.server.extensions.internal.actions.SQLTemplateAction"
+               menubarPath="org.eclipse.wst.rdb.server.extensions.actions.new/dataGroup"              
+               enablesFor="1"
+               id="org.eclipse.wst.rdb.server.extensions.actions.function">
+         </action>
+         <visibility>
+               <or>                                   
+               <objectClass
+               		 name="org.eclipse.wst.rdb.core.internal.ui.explorer.virtual.IUDFNode">
+               </objectClass>               
+               </or>
+         </visibility>
+      </viewerContribution>  
+      
+      <!-- New Trigger  -->  
+       <viewerContribution
+            targetID="org.eclipse.wst.rdb.server.ui.navigator.serverExplorer"
+            id="org.eclipse.wst.rdb.server.ui.explorer.popupMenus">
+         <menu
+               id="org.eclipse.wst.rdb.server.extensions.actions.new"
+               label="%UI_MENU_NEW"
+               path="additions" >             
+            <separator name="dataGroup"> </separator>
+         </menu>
+         <action
+               label="%UI_MENU_WITH_SQL_EDITOR"                   
+               icon="icons/open.gif"          
+               class="org.eclipse.wst.rdb.server.extensions.internal.actions.SQLTemplateAction"
+               menubarPath="org.eclipse.wst.rdb.server.extensions.actions.new/dataGroup"              
+               enablesFor="1"
+               id="org.eclipse.wst.rdb.server.extensions.actions.trigger">
+         </action>
+         <visibility>
+               <or>                                   
+               <objectClass
+               		 name="org.eclipse.wst.rdb.core.internal.ui.explorer.virtual.ITriggerNode">
+               </objectClass>               
+               </or>
+         </visibility>
+      </viewerContribution> 
+      
+       <!-- New Index  -->  
+       <viewerContribution
+            targetID="org.eclipse.wst.rdb.server.ui.navigator.serverExplorer"
+            id="org.eclipse.wst.rdb.server.ui.explorer.popupMenus">
+         <menu
+               id="org.eclipse.wst.rdb.server.extensions.actions.new"
+               label="%UI_MENU_NEW"
+               path="additions" >             
+            <separator name="dataGroup"> </separator>
+         </menu>
+         <action
+               label="%UI_MENU_WITH_SQL_EDITOR"                   
+               icon="icons/open.gif"          
+               class="org.eclipse.wst.rdb.server.extensions.internal.actions.SQLTemplateAction"
+               menubarPath="org.eclipse.wst.rdb.server.extensions.actions.new/dataGroup"              
+               enablesFor="1"
+               id="org.eclipse.wst.rdb.server.extensions.actions.index">
+         </action>
+         <visibility>
+               <or>                                   
+               <objectClass
+               		 name="org.eclipse.wst.rdb.core.internal.ui.explorer.virtual.IIndexNode">
+               </objectClass>               
+               </or>
+         </visibility>
+      </viewerContribution>  
+       
+	  <!-- Open  -->  
+      <viewerContribution
+			targetID="org.eclipse.wst.rdb.server.ui.navigator.serverExplorer"
+	        id="org.eclipse.wst.rdb.server.ui.explorer.popupMenus">
+         <menu
+               id="org.eclipse.wst.rdb.server.extensions.actions.new"
+               label="%UI_MENU_OPEN"
+               path="additions" >             
+            <separator name="dataGroup"> </separator>
+         </menu>
+         <action
+               label="%UI_MENU_WITH_SQL_EDITOR"                   
+               icon="icons/open.gif"          
+               class="org.eclipse.wst.rdb.server.extensions.internal.actions.OpenAction"
+               menubarPath="org.eclipse.wst.rdb.server.extensions.actions.new/dataGroup"              
+               enablesFor="1"
+               id="org.eclipse.wst.rdb.server.extensions.actions.open">
+            <enablement>
+               <objectClass name="org.eclipse.wst.rdb.internal.core.rte.ICatalogObject"/>
+            </enablement>
+         </action>
+         <visibility>
+               <or>                                   
+				<objectClass name="org.eclipse.wst.rdb.internal.models.sql.tables.Table"/>
+				<objectClass name="org.eclipse.wst.rdb.internal.models.sql.tables.ViewTable"/>
+				<objectClass name="org.eclipse.wst.rdb.internal.models.sql.datatypes.UserDefinedType"/>
+				<objectClass name="org.eclipse.wst.rdb.internal.models.sql.schema.Sequence"/>
+				<objectClass name="org.eclipse.wst.rdb.internal.models.sql.routines.Routine"/>
+    			<objectClass name="org.eclipse.wst.rdb.internal.models.sql.tables.Trigger"/>
+    			<objectClass name="org.eclipse.wst.rdb.internal.models.sql.constraints.Index"/>
+    			<objectClass name="org.eclipse.wst.rdb.internal.models.sql.constraints.Constraint"/>
+               </or>
+         </visibility>
+      </viewerContribution>  
+      
+  	  <!-- Drop -->  
+      <viewerContribution
+            targetID="org.eclipse.wst.rdb.server.ui.navigator.serverExplorer"
+            id="org.eclipse.wst.rdb.server.ui.explorer.popupMenus">
+         <action
+               label="%UI_MENU_DROP"
+               icon="icons/delete.gif"
+               class="org.eclipse.wst.rdb.server.extensions.internal.actions.DropAction"
+               menubarPath="additions"
+               id="org.eclipse.wst.rdb.server.ui.explorer.popupMenus.DropAction">
+            <enablement>
+               <objectClass name="org.eclipse.wst.rdb.internal.core.rte.ICatalogObject"/>
+            </enablement>
+         </action>
+         <visibility>
+            <or>
+               <objectClass
+                     name="org.eclipse.wst.rdb.internal.models.sql.tables.Table">
+               </objectClass>
+               <objectClass
+                     name="org.eclipse.wst.rdb.internal.models.sql.routines.Routine">
+               </objectClass>
+               <objectClass
+                     name="org.eclipse.wst.rdb.internal.models.sql.schema.Sequence">
+               </objectClass>
+               <objectClass
+                     name="org.eclipse.wst.rdb.internal.models.sql.datatypes.UserDefinedType">
+               </objectClass>
+               <objectClass name="org.eclipse.wst.rdb.internal.models.sql.tables.Trigger"/>
+               <objectClass name="org.eclipse.wst.rdb.internal.models.sql.constraints.Index"/>               
+            </or>
+         </visibility>
+      </viewerContribution>    
+       
+   </extension>
+   
+   <!-- Register the editor and action contributor class for the SQL Editor
+        extension that is specific to the Server Explorer context. -->
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            id="org.eclipse.wst.rdb.server.extensions.editorlaunch.SQLEditorForServerExplorer"
+            name="%UI_EDITOR_NAME"
+            icon="icons/sql_editor.gif"
+            class="org.eclipse.wst.rdb.server.extensions.internal.editorlaunch.SQLEditorForServerExplorer"
+			contributorClass="org.eclipse.wst.rdb.sqleditor.internal.SQLEditorActionContributor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.wst.rdb.server.extensions.sqlTemplates">
+      <templates baseDir="Templates">
+         <vendorDirectory
+               vendorId="DB2 UDB"
+               vendorDir="DB2"/>
+         <vendorDirectory
+               vendorId="DB2 UDB zSeries"
+               vendorDir="DB2"/>
+         <vendorDirectory
+               vendorId="DB2 UDB iSeries"
+               vendorDir="DB2"/>
+         <vendorDirectory
+               vendorId="Derby"
+               vendorDir="Derby"/>
+         <vendorDirectory
+               vendorId="default"
+               vendorDir="SQL99"/>
+         <vendorDirectory
+               vendorId="IBM Cloudscape"
+               vendorDir="Derby"/>
+         <vendorDirectory
+               vendorId="Informix"
+               vendorDir="Informix"/>
+         <vendorDirectory
+               vendorId="Oracle"
+               vendorDir="Oracle"/>
+         <vendorDirectory
+               vendorId="SQL Server"
+               vendorDir="SQLServer"/>
+         <vendorDirectory
+               vendorId="Sybase"
+               vendorDir="Sybase"/>
+         <templateFile
+               objectClass="org.eclipse.wst.rdb.core.internal.ui.explorer.providers.content.virtual.TableNode"
+               title="%NEW_TABLE"
+               templateFile="TableTemplate.ddl"/>
+         <templateFile
+               objectClass="org.eclipse.wst.rdb.core.internal.ui.explorer.providers.content.virtual.ViewNode"
+               title="%NEW_VIEW"
+               templateFile="ViewTemplate.ddl"/>
+         <templateFile
+               objectClass="org.eclipse.wst.rdb.core.internal.ui.explorer.virtual.IUDTNode"
+               title="%NEW_UDT"
+               templateFile="UDTTemplate.ddl"/>
+         <templateFile
+               objectClass="org.eclipse.wst.rdb.core.internal.ui.explorer.virtual.ISequenceNode"
+               title="%NEW_SEQUENCE"
+               templateFile="SequenceTemplate.ddl"/>
+         <templateFile
+               objectClass="org.eclipse.wst.rdb.core.internal.ui.explorer.virtual.IStoredProcedureNode"
+               title="NEW_PROCEDURE"
+               templateFile="ProcedureTemplate.ddl"/>
+         <templateFile
+               objectClass="org.eclipse.wst.rdb.core.internal.ui.explorer.virtual.IUDFNode"
+               title="NEW_FUNCTION"
+               templateFile="FunctionTemplate.ddl"/>
+         <templateFile
+               objectClass="org.eclipse.wst.rdb.core.internal.ui.explorer.virtual.ITriggerNode"
+               title="NEW_TRIGGER"
+               templateFile="TriggerTemplate.ddl"/>
+         <templateFile
+               objectClass="org.eclipse.wst.rdb.core.internal.ui.explorer.virtual.IIndexNode"
+               title="NEW_INDEX"
+               templateFile="IndexTemplate.ddl"/>
+      </templates>
+   </extension>
+   
+</plugin>

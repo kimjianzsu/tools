@@ -1,0 +1,83 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<html>
+
+
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="help.css">
+
+
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+
+<title>Managing workspaces</title>
+
+
+
+
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+<h1>Managing workspaces</h1>
+
+<p>Create a separate Rational Developer product workspace for each ClearCase view. Store
+each workspace directory on the local file system and not under source control.&nbsp;</p>
+
+
+
+<p>We do not recommend placing the Eclipse workspace directory in a view-private
+directory. If you create projects in the default location under the workspace
+directory, ClearCase prompts to add the project to source control. This process
+requires all parent directories to be under source control including the
+workspace directory. Instead, create workspace directories outside of a
+ClearCase view. If you want to create projects under source control, you should
+clear the <b>Use default location</b> checkbox in the project creation dialog
+and navigate to a path in a VOB.</p>
+
+
+
+<p>Use a
+standard location for your workspaces such as, for example, <b>D:\Workspaces</b>. It is good
+practice to verify that
+your workspace name matches the name of the associated ClearCase view. For example,
+for the Development view associated with the Rel3 project, the workspace name
+could be: <b>D:\Workspaces\&lt;<i>user_name&gt;</i>_Rel3_dev</b> .</p>
+
+
+
+<p>To specify a workspace, select the workspace in the Workspace Launcher window
+that appears when you start the Rational Developer product. To move between
+workspaces, use the <b>File &gt; Switch Workspace</b> option in the Rational
+Developer product.</p>
+
+
+
+<p><B>Related references<br>
+</B><a href="AsWkView.htm">Associate a workspace with a ClearCase view</a><B><br>
+</B><a href="PrWrkCls.htm">When workspace is closed<br>
+</a><a href="WrkModel.htm">Working with models</a></p>
+
+
+
+<p class="copyright">(C) Copyright IBM Corporation 2000, 2006. All Rights Reserved.</p>
+
+
+
+</body>
+
+
+
+</html>
+

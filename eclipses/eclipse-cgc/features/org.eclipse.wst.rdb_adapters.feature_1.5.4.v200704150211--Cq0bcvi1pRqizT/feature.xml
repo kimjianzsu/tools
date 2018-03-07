@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.wst.rdb_adapters.feature"
+      label="%featureName"
+      version="1.5.4.v200704150211--Cq0bcvi1pRqizT"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://download.eclipse.org/webtools/updates/"/>
+   </url>
+
+   <plugin
+         id="org.eclipse.wst.rdb.dbdefinition.db2.iseries"
+         download-size="0"
+         install-size="0"
+         version="1.0.106.v200704191851"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.rdb.dbdefinition.db2.luw"
+         download-size="0"
+         install-size="0"
+         version="1.0.107.v200702021852"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.rdb.dbdefinition.db2.zseries"
+         download-size="0"
+         install-size="0"
+         version="1.0.107.v200704121755"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.rdb.dbdefinition.derby"
+         download-size="0"
+         install-size="0"
+         version="1.0.104.v200610161905"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.rdb.dbdefinition.generic.jdbc"
+         download-size="0"
+         install-size="0"
+         version="1.0.101.v200605040131"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.rdb.dbdefinition.informix"
+         download-size="0"
+         install-size="0"
+         version="1.0.104.v200610261819"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.rdb.dbdefinition.mysql"
+         download-size="0"
+         install-size="0"
+         version="1.0.101.v200610161905"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.rdb.dbdefinition.oracle"
+         download-size="0"
+         install-size="0"
+         version="1.0.104.v200704102203"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.rdb.dbdefinition.sqlserver"
+         download-size="0"
+         install-size="0"
+         version="1.0.105.v200610161905"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.rdb.dbdefinition.sybase"
+         download-size="0"
+         install-size="0"
+         version="1.0.106.v200610261819"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.rdb.derby"
+         download-size="0"
+         install-size="0"
+         version="1.0.107.v200703122014"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.rdb.mysql"
+         download-size="0"
+         install-size="0"
+         version="1.0.105.v200703122014"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.rdb.derby.ui"
+         download-size="0"
+         install-size="0"
+         version="1.0.103.v200612130213"
+         unpack="false"/>
+
+</feature>

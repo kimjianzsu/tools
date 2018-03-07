@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.wst.xml_sdk.feature"
+      label="%featureName"
+      version="1.5.4.v200704150112-L2zO3ER9VSfb00j"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://download.eclipse.org/webtools/updates/"/>
+   </url>
+
+   <includes
+         id="org.eclipse.wst.xml_ui.feature.source"
+         version="1.5.4.v200704150112-zkiCfzC3FHTOi-O"/>
+
+   <includes
+         id="org.eclipse.wst.xml_ui.feature"
+         version="1.5.4.v200704150112-zkiCfzC3FHTOi-O"/>
+
+</feature>

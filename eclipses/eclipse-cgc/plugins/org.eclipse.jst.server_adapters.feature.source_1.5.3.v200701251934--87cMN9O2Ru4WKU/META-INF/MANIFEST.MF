@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.jst.server_adapters.feature.source; singleton=true
+Bundle-Version: 1.5.3.v200701251934--87cMN9O2Ru4WKU
+Bundle-Localization: plugin
+Bundle-Vendor: %providerName

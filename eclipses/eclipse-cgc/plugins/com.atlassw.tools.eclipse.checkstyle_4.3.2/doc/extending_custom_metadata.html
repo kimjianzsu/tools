@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="CONTENT-TYPE" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+<title>eclipse-cs: Metadata explained</title>
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" class="maintable">
+<tr>
+<td class="mainsection">
+<table style="height: 100%" cellspacing="0" cellpadding="0" width="100%" border="0">
+<tr>
+<td>
+<table cellpadding="0" cellspacing="0" class="header">
+<tr>
+<td style="text-align: left; width=100%">
+<img alt="eclipse-cs Banner" src="images/banner.gif" />
+</td>
+<td style="vertical-align: middle; width: 75px; height: 75px;">
+<a class="imagelink" href="http://sourceforge.net/">
+<img alt="SourceForge.net Logo" src="http://sourceforge.net/sflogo.php?group_id=80344&amp;amp;type=1" />
+</a>
+<a class="imagelink" href="http://sourceforge.net/donate/index.php?group_id=80344">
+<img alt="Support This Project" src="http://images.sourceforge.net/images/project-support.jpg" />
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="content">
+    
+        <h2>-- Metadata explained --</h2>
+
+        <p>As you may know from the <a href="extending_custom_checks.html" shape="rect">previous chapter</a> you can
+        provide metadata for your custom checks to enhance support for your checks inside the plug-in.
+        <br />
+         The structure and features of such metadata files is described below.</p>
+<pre xml:space="preserve">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;!-- Add the following to any metadata file that is to be validated against this DTD:
+
+&lt;!DOCTYPE checkstyle-metadata PUBLIC
+    "-//eclipse-cs//DTD Check Metadata 1.0//EN"
+    "http://eclipse-cs.sourceforge.net/dtds/checkstyle-metadata_1_0.dtd"&gt;
+--&gt;
+
+&lt;!-- 
+Root element for every metadata definition.
+--&gt;
+&lt;!ELEMENT checkstyle-metadata (rule-group-metadata+)&gt;
+
+
+&lt;!-- 
+Used to specify a group of rules.
+
+The 'name' attribute is used as display name and is translatable.
+
+The 'priority' influences the order in which groups appear in the configuration editor.
+
+The 'hidden' attribute can be used to hide an entire group.
+--&gt;
+&lt;!ELEMENT rule-group-metadata (description?,rule-metadata*)&gt;
+&lt;!ATTLIST rule-group-metadata
+	name               CDATA        #REQUIRED
+	priority           CDATA        #REQUIRED
+	hidden             (true|false) "false"&gt;
+
+&lt;!--
+Used to to provide a textual description for the element.
+The content might be translatable.
+--&gt;
+&lt;!ELEMENT description (#PCDATA)&gt;
+
+
+&lt;!-- 
+'rule-metadata' elements are used to define the metadata for a check (or filter) module.
+The 'name' attribute is used as display name and is translatable.
+
+The 'internal-name' attribute defines the logical name of the module.
+The internal name must be unique.
+
+The 'checkstyle-module-name' can be used if the internal-name differs from the actual name
+	of the checkstyle module that needs to be written to the checkstyle configuration file.
+	Most likely this will only be used by users adopting checkstyle for other languages than
+	java and want to reuse existing implementations of standard checkstyle checks.
+	
+The 'parent' element defines if the module is a file set check (Checker as parent)
+	or a regular 'TreeWalker' check.
+		
+The 'hasSeverity' attribute specifies if a module has a severity property that can be set.
+Some modules (like filters) have no severity property.
+		
+The 'hidden' attribute is used to hide a module, so it cannot be seen or 
+	configured in the configuration editor. This is only used for some special modules
+	like FileContentsHolder. The attribut defaults to 'false'.
+		
+The 'deletable' attribute is used to specify if the module can be removed from the 
+	configuration via the configuration editor. This only makes sense for some 
+	special modules like Checker or TreeWalker, which must be present. Therefore
+	this attribute default to 'false'.
+
+The 'singleton' module is used to specify if the module should occur only once in
+	a checkstyle configuration. This will be taken into account by the configuration editor.
+--&gt;
+&lt;!ELEMENT rule-metadata (alternative-name+,description?,property-metadata*)&gt;
+&lt;!ATTLIST rule-metadata
+	name                    CDATA           #REQUIRED
+	internal-name           NMTOKEN         #REQUIRED
+	checkstyle-module-name  NMTOKEN         #IMPLIED
+	parent                  NMTOKEN         #REQUIRED
+	hasSeverity             (true|false)    "true"
+	hidden                  (true|false)    "false"
+	deletable               (true|false)    "true"
+	singleton               (true|false)    "false"&gt;
+
+
+&lt;!-- 
+Every 'rule-metadata' element must have at least one 'alternative-name' child 
+element, which describes under which name the module might occur in a configuration
+file as well. As you may know you can specify modules in a Checkstyle configuration
+file using the logical module name or the fully qualified class name.
+This means that this element is used to map the fully qualified module class name 
+to this module.
+You are able to provide multiple alternative names, which might be useful if
+your package structure for your modules changed over time. In this case specify
+the old qualified class names for your module as 'alternative-name' element.
+The plug-in is then able to load even Checkstyle configuration files where your old
+module names are used.
+--&gt;
+&lt;!ELEMENT alternative-name EMPTY&gt;
+&lt;!ATTLIST alternative-name
+	internal-name	CDATA	#REQUIRED&gt;
+
+
+&lt;!--
+'property-metadata' elements are used to describe the properties of a checkstyle
+module. Properties described this way can then be configured using the plug-ins
+configuration editor.
+
+The 'name' attributes specifies the name of the property.
+
+The 'datatype' attribute determines which kind of data the property contains.
+
+The 'default' attribute is used to specify the default value of the property.
+
+Properties of data type 'MultiCheck' and 'SingleSelect' can (better must) be provided
+with an 'enumeration' child element which specifies the valid enumeration values for
+this property.
+--&gt;
+&lt;!ELEMENT property-metadata(description?,enumeration?)&gt;
+&lt;!ATTLIST property-metadata
+	name            NMTOKEN	#REQUIRED
+	datatype        (Boolean|Integer|String|Regex|SingleSelect|MultiCheck|File|Hidden) #REQUIRED
+	default-value   CDATA	#IMPLIED&gt;
+
+
+&lt;!--
+The 'enumeration' element is used to provide valid enumeration values for 'MultiCheck'
+and 'SingleSelect' properties.
+Either the enumeration values are defined using 'property-value-option' child elements
+or by an option provider.
+An option provider is a java class that implements the interface
+'com.atlassw.tools.eclipse.checkstyle.config.meta.IOptionProvider' and provides the 
+enumeration values via implementation. This can be useful for providing large amounts
+of enumeration values (for instance all checkstyle tokens) or reoccurring sequences of
+enumeration values (for instance the java visibility values).
+The option provider and 'property-value-option' elements can be mixed together to build
+a single enumeration.
+--&gt;
+&lt;!ELEMENT enumeration (property-value-option*)&gt;
+&lt;!ATTLIST enumeration
+	option-provider	NMTOKEN	#IMPLIED&gt;
+
+
+&lt;!--
+Specifies a single enumeration value.
+--&gt;
+&lt;!ELEMENT property-value-option EMPTY&gt;
+&lt;!ATTLIST property-value-option
+	value	CDATA	#REQUIRED&gt;             
+       
+</pre>
+    </td>
+</tr>
+<tr>
+<td class="footer">
+<table style="text-align:top;" width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td style="width: 35px">
+<a href="#">
+<img alt="Back to top" src="images/top_button_left.gif" />
+</a>
+</td>
+<td class="copyright"> Copyright © 2002-2007 David Schneider, <a href="http://www.koedderitzsch.net">Lars Ködderitzsch</a>. All Rights
+					Reserved. </td>
+<td style="width: 35px">
+<a href="#">
+<img alt="Back to top" src="images/top_button_right.gif" />
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.wst.common_ui.feature"
+      label="%featureName"
+      version="1.5.4.v200704150119-qKHiYJJQ6hbGi-5"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://download.eclipse.org/webtools/updates/"/>
+   </url>
+
+   <includes
+         id="org.eclipse.wst.common_userdoc.feature"
+         version="1.5.3.v200701251933"/>
+
+   <includes
+         id="org.eclipse.wst.common_core.feature"
+         version="1.5.4.v200704150119--AXrVWeXJj6fQls"/>
+
+   <requires>
+      <import feature="org.eclipse.gef" version="3.2" match="equivalent"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.wst.command.env.ui"
+         download-size="0"
+         install-size="0"
+         version="1.0.103.v200703212342"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.common.frameworks.ui"
+         download-size="0"
+         install-size="0"
+         version="1.1.2.v200702071605"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.common.infopop"
+         download-size="0"
+         install-size="0"
+         version="1.0.1.v200605270041"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.common.project.facet.ui"
+         download-size="0"
+         install-size="0"
+         version="1.1.2.v200701192142"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.common.snippets"
+         download-size="0"
+         install-size="0"
+         version="1.1.1.v200609140550"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.common.ui"
+         download-size="0"
+         install-size="0"
+         version="1.1.101.v200702021750"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.common.ui.properties"
+         download-size="0"
+         install-size="0"
+         version="1.0.101.v200609140551"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.internet.proxy"
+         download-size="0"
+         install-size="0"
+         version="1.0.101.v200702021949"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.internet.proxy.infopop"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.v200605070230"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.internet.cache"
+         download-size="0"
+         install-size="0"
+         version="1.0.103.v200612070353"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.validation.ui"
+         download-size="0"
+         install-size="0"
+         version="1.1.2.v200612061436"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.command.env.infopop"
+         download-size="0"
+         install-size="0"
+         version="1.0.2.v200605070230"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.validation.infopop"
+         download-size="0"
+         install-size="0"
+         version="1.0.201.v200606130645"
+         unpack="false"/>
+
+</feature>

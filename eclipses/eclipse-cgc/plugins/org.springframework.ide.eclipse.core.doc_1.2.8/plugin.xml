@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin
+   id="org.springframework.ide.eclipse.core.doc"
+   name="%pluginName"
+   version="1.2.8"
+   provider-name="%providerName">
+
+   <runtime>
+   </runtime>
+
+   <extension
+         point="org.eclipse.help.toc">
+      <toc
+            file="toc.xml"
+            primary="true">
+      </toc>
+   </extension>
+
+</plugin>

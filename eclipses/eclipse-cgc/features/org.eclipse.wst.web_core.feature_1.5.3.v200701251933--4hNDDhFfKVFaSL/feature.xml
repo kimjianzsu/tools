@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.wst.web_core.feature"
+      label="%featureName"
+      version="1.5.3.v200701251933--4hNDDhFfKVFaSL"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://download.eclipse.org/webtools/updates/"/>
+   </url>
+
+   <requires>
+      <import feature="org.eclipse.platform" version="3.2" match="equivalent"/>
+      <import feature="org.eclipse.emf" version="2.2" match="equivalent"/>
+      <import feature="org.eclipse.jem" version="1.2" match="equivalent"/>
+      <import feature="org.eclipse.wst.server_core.feature" version="1.0.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.wst.common_core.feature" version="1.0.0" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.wst.css.core"
+         download-size="0"
+         install-size="0"
+         version="1.1.1.v200609140550"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.html.core"
+         download-size="0"
+         install-size="0"
+         version="1.1.2.v200612200820"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.javascript.core"
+         download-size="0"
+         install-size="0"
+         version="1.0.1.v200609140550"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.web"
+         download-size="0"
+         install-size="0"
+         version="1.1.2.v200610182223"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.html.standard.dtds"
+         download-size="0"
+         install-size="0"
+         version="1.0.1.v200608220315"
+         unpack="false"/>
+
+</feature>
